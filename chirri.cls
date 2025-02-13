@@ -31,6 +31,10 @@
 \usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry}
 %%%%%%%%%%%%%%%%%%%%%%%%
 
+
+\setlength{\parindent}{0pt}      %(to suppress indentation, when starting a new paragraph)
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DEBUG
 % Show layout paramters - \layout or \layout* after \begin{document}
 \usepackage{layout}
