@@ -33,3 +33,17 @@
 \usepackage{showframe}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dump data for checking - \blindtext[1]
+% \blindtext = paragraph of dummy text
+% \Blindtext = multiple paragraphs (one page long) of dummy text
+% \Blinddocument = entire document, If you specify documentclass
+%      as report then \Blinddocument will generate the document
+%      with multiple chapters, sections, subsections, paragraphs,
+%       and itemized lists.
+\usepackage{blindtext}
+\usepackage{lipsum}              % Dummy data - lipsum[2-4]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
