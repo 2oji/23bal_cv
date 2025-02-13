@@ -58,3 +58,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Tcolorbox
+%
+% https://ctan.org/pkg/tcolorbox
+%
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
