@@ -24,6 +24,13 @@
 
 \LoadClass{article}
 
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Load Geometry package after \LoadClass{article} to make effect
+%
+%\usepackage[top=0.75in, bottom=0.75in, left=0.55in, right=0.85in]{geometry}
+\usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DEBUG
 % Show layout paramters - \layout or \layout* after \begin{document}
 \usepackage{layout}
