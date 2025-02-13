@@ -24,5 +24,12 @@
 
 \LoadClass{article}
 
-%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DEBUG
+% Show layout paramters - \layout or \layout* after \begin{document}
+\usepackage{layout}
+%\usepackage{layouts}             % Illustrates minor details - Useful package
+%
+% Show outerframe, Uncomment this   - DEBUG
+\usepackage{showframe}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
