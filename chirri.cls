@@ -63,7 +63,7 @@
 % https://ctan.org/pkg/tcolorbox
 %
 \usepackage{tcolorbox}
-\tcbuselibrary{breakable}
+\tcbuselibrary{skins,breakable}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
