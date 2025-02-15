@@ -24,6 +24,11 @@
    sidebyside,                                % Make columsn side by side
    lefthand width=0.66\textwidth,             % Set width of left column
    draft,                                     % DEBUG
+      %%% Debug:
+      % Show bounding box of outer frame of tcolorbox
+      % Both `draft` OR `show bounding box` together will never exist
+      % the command execute at last will overrule earlier one
+   enhanced, show bounding box,
 ]
 This is another \textbf{tcolorbox}.
 \tcblower
