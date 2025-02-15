@@ -23,6 +23,14 @@
    colback=red!5!white,colframe=red!75!black,
    sidebyside,                                % Make columsn side by side
    lower separated=false,                     % Hide separated dashed line
+      %%% Text Alignment:
+      % flush right: right border justification of \raggedleft of Latex
+      % flush left: right border justification of \raggedright of Latex
+      % flush center: \centering of Latex and not plain Tex
+   halign upper=flush center,                 % Horizontally center
+   halign lower=flush right,                  % Horizontally right
+   sidebyside align=bottom,                   % Vertical alignment same
+                                              % minipage c,t,b with baseline
       %%% Geometry:
       % Set the the geometry of text
       % Set the space around text box of upper and lower to 0mm
