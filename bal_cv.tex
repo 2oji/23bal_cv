@@ -17,7 +17,8 @@
 \begin{document}
 \layout                    % DEBUG
 
-\begin{tcolorbox}[
+
+\newtcolorbox{headingbox}{
    title=User specific details,
    notitle,                                   % Uncomment to show title
       %%% Text Alignment:
@@ -72,12 +73,13 @@
       % abbreviatin for skin=draft
 %   draft,
    nobeforeafter,                             % spaces before and after removed
-   ]
+}
+
+\begin{headingbox}
 This is another \textbf{tcolorbox}.
 \tcblower
 Here, you see the lower part of the box.
-\end{tcolorbox}
-
+\end{headingbox}
 
 \lipsum[1-3]
 \textbf{Blindtext:}
