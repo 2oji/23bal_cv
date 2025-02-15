@@ -17,64 +17,6 @@
 \begin{document}
 \layout                    % DEBUG
 
-
-\newtcolorbox{headingbox}{
-   title=User specific details,
-   notitle,                                   % Uncomment to show title
-      %%% Text Alignment:
-      % flush right: right border justification of \raggedleft of Latex
-      % flush left: right border justification of \raggedright of Latex
-      % flush center: \centering of Latex and not plain Tex
-   halign upper=flush center,                 % Horizontally center
-   halign lower=flush right,                  % Horizontally right
-   sidebyside align=bottom,                   % Vertical alignment same
-                                              % minipage c,t,b with baseline
-      %%% Geometry:
-      % Set the the geometry of text
-      % Set the space around text box of upper and lower to 0mm
-      % boxrule - space between outer box and upperbox/lowerbox
-   left=0mm,right=0mm,top=0mm,bottom=0mm,middle=0mm,boxsep=0mm,     % Remove default spaces
-   boxrule=0mm,                               % Draw box with 0mm width, nothing to draw
-   arc=0mm,                                   % remove arc at corners
-                                              %
-      %%% sidebyside
-      % lowerbox moved to side
-      % no separator line
-      % right and left side column gap set
-   sidebyside,                                % Make columsn side by side
-   lower separated=false,                     % Hide separated dashed line
-   lefthand width=0.66\textwidth,             % Set width of left column
-   sidebyside gap=3mm,                        % Set gap of left and right column
-                                              %
-      %%% Colors
-      % Sets background color and frame color
-   colback=red!5!white,colframe=red!75!white,
-                                              %
-      %%% Skin:
-      % empty - abbreviation of skin=empty. This sets all engines to empty
-      %         frame, interior, segmentation, title
-      %         even colour is also not filled
-      % blank, blanker, blankest - more features
-      % Check Manual for more details
-   empty,                                     % skin=empty - Disable all skin engines
-      %frame empty,
-      %segmentation empty,                    % lower separated is nullified
-      %interior empty,
-      %frame hidden,                          % like to draw=none, fill=none
-                                              %
-      %%% Debug:
-      % Show bounding box of outer frame of tcolorbox
-      % Both `draft` OR `show bounding box` together will never exist
-      % the command execute at last will overrule earlier one
-%   enhanced, show bounding box,
-      %%% Debug:
-      % While drafting new geometric settings of tcolorbox
-      % Highlights all the parameter of box and text design
-      % abbreviatin for skin=draft
-%   draft,
-   nobeforeafter,                             % spaces before and after removed
-}
-
 \begin{headingbox}
 This is another \textbf{tcolorbox}.
 \tcblower
