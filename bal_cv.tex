@@ -23,12 +23,16 @@
    colback=red!5!white,colframe=red!75!black,
    sidebyside,                                % Make columsn side by side
    lefthand width=0.66\textwidth,             % Set width of left column
-   draft,                                     % DEBUG
       %%% Debug:
       % Show bounding box of outer frame of tcolorbox
       % Both `draft` OR `show bounding box` together will never exist
       % the command execute at last will overrule earlier one
    enhanced, show bounding box,
+      %%% Debug:
+      % While drafting new geometric settings of tcolorbox
+      % Highlights all the parameter of box and text design
+      % abbreviatin for skin=draft
+   draft,
 ]
 This is another \textbf{tcolorbox}.
 \tcblower
