@@ -40,6 +40,18 @@
    arc=0mm,                                   % remove arc at corners
    lefthand width=0.66\textwidth,             % Set width of left column
    sidebyside gap=3mm,
+      %%% Skin:
+      % empty - abbreviation of skin=empty. This sets all engines to empty
+      %         frame, interior, segmentation, title
+      %         even colour is also not filled
+      % blank, blanker, blankest - more features
+      % Check Manual for more details
+   empty,                                     % skin=empty - Disable all skin engines
+      %frame empty,
+      %segmentation empty,                    % lower separated is nullified
+      %interior empty,
+      %frame hidden,                          % like to draw=none, fill=none
+                                              %
       %%% Debug:
       % Show bounding box of outer frame of tcolorbox
       % Both `draft` OR `show bounding box` together will never exist
