@@ -92,6 +92,7 @@
       % lowerbox moved to side
       % no separator line
       % right and left side column gap set
+      % unbreakable box
    sidebyside,                                % Make columsn side by side
    lower separated=false,                     % Hide separated dashed line
    lefthand width=0.66\textwidth,             % Set width of left column
