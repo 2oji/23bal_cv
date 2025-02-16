@@ -7,7 +7,14 @@ bal: bal_cv.tex chirri.cls
 	xelatex bal_cv.tex
 	xelatex bal_cv.tex
 
-all: bal
+pin: pin.tex
+	latex pin.tex
+	latex pin.tex
+	dvipdf pin.dvi
+	dvips pin.dvi
+
+# First compile pin and then final document
+all: pin bal
 
 .PHONY: clean
 clean:

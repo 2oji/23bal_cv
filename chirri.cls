@@ -45,6 +45,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%%% Load graphics pacakge
+\usepackage{graphicx}            %% For linkedin icons, github
+\usepackage{calc}                %% To calculate the localLocPin
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Dump data for checking - \blindtext[1]
 % \blindtext = paragraph of dummy text

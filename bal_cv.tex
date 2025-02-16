@@ -14,6 +14,15 @@
 \pagestyle{empty}
 %%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%
+% New Command pin, local pin.pdf
+\newcommand*{\localLocPin}{%
+  \includegraphics[height=\heightof{M}]{pin}%
+}
+
+%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \layout                    % DEBUG
 
@@ -21,6 +30,7 @@
 This is another \textbf{tcolorbox}.
 \tcblower
 Here, you see the lower part of the box.
+   {\Large{\localLocPin}}{} area
 \end{headingbox}
 
 \lipsum[1-3]
