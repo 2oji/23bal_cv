@@ -65,7 +65,7 @@
 \usepackage{tcolorbox}
 \tcbuselibrary{skins,breakable}
 
-\newtcolorbox{headingbox}{
+\newtcolorbox{headingbox}[1][]{%
    title=User specific details,
    notitle,                                   % Uncomment to show title
       %%% Text Alignment:
@@ -120,6 +120,7 @@
       % abbreviatin for skin=draft
 %   draft,
    nobeforeafter,                             % spaces before and after removed
+   #1,                                        % Run time arguments at last
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
