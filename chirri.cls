@@ -61,6 +61,14 @@
 \usepackage{lipsum}              % Dummy data - lipsum[2-4]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%
+% new commands and macros
+%
+\def\RIGHTCOLUMNWIDTH {0.33\textwidth}            % 1/3 of text width
+\def\LEFTCOLUMNWIDTH  {0.66\textwidth}            % 2/3 of text width
+
+\newcommand{\RightColWdth}{0.33\textwidth}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Tcolorbox
 %
@@ -95,7 +103,8 @@
       % unbreakable box
    sidebyside,                                % Make columsn side by side
    lower separated=false,                     % Hide separated dashed line
-   lefthand width=0.66\textwidth,             % Set width of left column
+%   lefthand width=\LEFTCOLUMNWIDTH,           % Set width of left column
+   righthand width=\RIGHTCOLUMNWIDTH,         % Set width of left column
    sidebyside gap=3mm,                        % Set gap of left and right column
                                               %
       %%% Colors
