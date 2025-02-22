@@ -35,12 +35,16 @@ Here, you see the lower part of the box.
 \\[2\baselineskip]
 
 \begin{tcolorbox}[
-  blanker,
+  %blanker,
   width=0.64\textwidth,enlarge left by=0.36\textwidth,
   before skip=6pt,
+  colback=red!5!white,colframe=red!75!white,
   breakable,
+  enhanced,                               % Debug - Grey background
+  show bounding box,                      % Debug
   overlay unbroken and first={%
     \node[inner sep=0pt,outer sep=0pt,text width=0.33\textwidth,
+      draw=blue, fill=red!5!white,        % Debug
       align=none,
       below right]
       at ([xshift=-0.36\textwidth]frame.north west)
