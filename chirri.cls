@@ -67,6 +67,7 @@
 \def\RIGHTCOLUMNWIDTH {0.33\textwidth}            % 1/3 of text width
 \def\LEFTCOLUMNWIDTH  {0.66\textwidth}            % 2/3 of text width
 
+\newcommand{\LeftColWdth}{0.66\textwidth}
 \newcommand{\RightColWdth}{0.33\textwidth}
 
 
