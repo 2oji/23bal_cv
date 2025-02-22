@@ -38,6 +38,9 @@ Here, you see the lower part of the box.
   %blanker,
   blank,
   width=\LeftColWdth,
+      %%%
+      % halign same of halign upper if lowerbox ignored
+  halign upper=flush left,
   %enlarge left by=0.36\textwidth,
   before skip=6pt,
   colback=red!5!white,colframe=red!75!white,
@@ -52,7 +55,9 @@ Here, you see the lower part of the box.
     \node[inner sep=0pt,outer sep=0pt,
       text width=\RightColWdth,           % 1/3 of textwidth = 0.33 * \textwidth
       draw=blue, fill=red!5!white,        % Debug
-      align=none,
+         %%%
+         % align - left, right, center, flush left, flush right
+      align=left,
       below right]
       %%%
       % Place this node to east side at xshift
