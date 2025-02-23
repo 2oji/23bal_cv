@@ -62,6 +62,8 @@
    urlcolor=blue,
    linkbordercolor=red
 }
+\definecolor{ltgrey}{gray}{0.50}
+\definecolor{black}{RGB}{0, 0, 0}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
