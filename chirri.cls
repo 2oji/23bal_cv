@@ -49,6 +49,10 @@
 \usepackage{graphicx}            %% For linkedin icons, github
 \usepackage{calc}                %% To calculate the localLocPin
 
+%%% Fonts
+\usepackage{palatino}            %% Switch to Palladio font
+
+
 %%%
 %
 %
