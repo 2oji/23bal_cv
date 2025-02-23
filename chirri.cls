@@ -138,6 +138,42 @@
    #1,                                        % Run time arguments at last
 }
 
+\newtcolorbox{masterbox}[1][]{%
+  %blanker,
+  blank,
+  width=\LeftColWdth,
+      %%%
+      % halign same of halign upper if lowerbox ignored
+  halign upper=flush left,
+  %enlarge left by=0.36\textwidth,
+  before skip=6pt,
+  colback=red!5!white,colframe=red!75!white,
+  breakable,
+  enhanced,                               % Debug - Grey background
+  show bounding box,                      % Debug
+   %%%
+   % overlay unbroken - so that it prints on first page
+   % `and first` - make sure that it parallel to left colmn
+   % if tcolorbox is brekable to multi pages
+  overlay unbroken and first={%
+    \node[inner sep=0pt,outer sep=0pt,
+      text width=\RightColWdth,           % 1/3 of textwidth = 0.33 * \textwidth
+      draw=blue, fill=red!5!white,        % Debug
+         %%%
+         % align - left, right, center, flush left, flush right
+      align=left,
+      below right]
+      %%%
+      % Place this node to east side at xshift
+      % xshift=0pt  , both columns touch each other
+      % Calculate it so that both cols touch outer side
+      % 0.03 = 1 - (0.64 + 0.33) is the distance b/w 2 columns
+      % xshift = 1 - LeftColWdth - RightColWdth
+      %
+      at ([xshift=0.01\textwidth]frame.north east)
+  {%
+      \input{./data/skillinfo.tex}
+  };}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
