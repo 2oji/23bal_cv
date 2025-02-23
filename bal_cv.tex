@@ -15,6 +15,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%
+%%%
+% Load Confidential data
+\newcommand{\UserName}{\textsc {\Huge 2oji}}
+\newcommand{\UserExperience}{13}
+\newcommand{\UserMobile}{\textsc{+1234-123-123}}
+\newcommand{\UserEmailID}{\textit{2oji@github.com}}
+%
+%
+\newcommand{\UserLocation}{\textsc{Panjab}}
+\newcommand{\CompanyA}{\textsc{\large Hombre}}
+\newcommand{\CurrentCompany}{\CompanyA}
+
+%%%
 % New Command pin, local pin.pdf
 \newcommand*{\localLocPin}{%
   \includegraphics[height=\heightof{M}]{pin}%
@@ -27,10 +40,19 @@
 \layout                    % DEBUG
 
 \begin{headingbox}[skin=bicolor,colbacklower=yellow,lower separated=true]
-\lipsum[1]
+   \UserName{} \\
+   Software Architect \textbullet Embedded developer \\
+   \textbullet Boot \textbullet Linux device driver \textbullet UFS  \\
+   Experience \UserExperience{} Years    \\
+   \UserMobile{} \textbullet \space \UserEmailID{}
+%
+%
 \tcblower
-Here, you see the lower part of the box.
-   {\Large{\localLocPin}}{} area
+   \CurrentCompany{} \\
+   Staff Engineer  \\
+   {\Large{\localLocPin}}{} \UserLocation{}
+%
+%
 \end{headingbox}
 \\[2\baselineskip]
 
