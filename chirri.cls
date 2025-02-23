@@ -49,6 +49,21 @@
 \usepackage{graphicx}            %% For linkedin icons, github
 \usepackage{calc}                %% To calculate the localLocPin
 
+%%%
+%
+%
+\usepackage{xcolor} % used for colouring and underline the links.
+\usepackage{hyperref} % used to generate links i.e mailto:xxxx@ymail.com
+\hypersetup{
+   colorlinks=true,
+   linkcolor=blue,
+   filecolor=magenta,
+%  urlcolor=cyan,
+   urlcolor=blue,
+   linkbordercolor=red
+}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Dump data for checking - \blindtext[1]
 % \blindtext = paragraph of dummy text
