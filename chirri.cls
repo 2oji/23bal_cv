@@ -138,7 +138,7 @@
    #1,                                        % Run time arguments at last
 }
 
-\newtcolorbox{masterbox}[1][]{%
+\newtcolorbox{masterbox}[2][]{%
   %blanker,
   blank,
   width=\LeftColWdth,
@@ -151,6 +151,7 @@
   breakable,
   enhanced,                               % Debug - Grey background
   show bounding box,                      % Debug
+  #2,
    %%%
    % overlay unbroken - so that it prints on first page
    % `and first` - make sure that it parallel to left colmn
@@ -172,7 +173,7 @@
       %
       at ([xshift=0.01\textwidth]frame.north east)
   {%
-      \input{./data/skillinfo.tex}
+      \input{#1}
   };}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
