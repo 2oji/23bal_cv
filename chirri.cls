@@ -49,6 +49,51 @@
 \usepackage{graphicx}            %% For linkedin icons, github
 \usepackage{calc}                %% To calculate the localLocPin
 
+
+%%% Tables
+\usepackage{tabularx}
+
+
+%%% Fonts & Encodings
+%
+%
+\usepackage{palatino}            %% Switch to Palladio font
+\usepackage[T1]{fontenc}         %% Support of 8 bit encoding 256 glyphs
+                                 %% Display correctly |, <, >
+\usepackage[utf8]{inputenc}      %% translates various standard and other input encodings into a ‘LaTeX internal language’
+                                 %% Characters associated with many langugages will display correctly - MUST pkg
+%%%
+% all later pages the natural height of the material on that page
+% no rubber vertical lengths will be stretched
+%
+\usepackage{ragged2e}
+%\textheight=9.75in
+\raggedbottom
+
+%%% Symbols
+% fontawesome, marvosym, ifsym few pkgs
+%
+%
+\usepackage{fontawesome}         %% For linkedin icons, github
+
+
+%%%
+%
+%
+\usepackage{xcolor} % used for colouring and underline the links.
+\usepackage{hyperref} % used to generate links i.e mailto:xxxx@ymail.com
+\hypersetup{
+   colorlinks=true,
+   linkcolor=blue,
+   filecolor=magenta,
+%  urlcolor=cyan,
+   urlcolor=blue,
+   linkbordercolor=red
+}
+\definecolor{ltgrey}{gray}{0.50}
+\definecolor{black}{RGB}{0, 0, 0}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Dump data for checking - \blindtext[1]
 % \blindtext = paragraph of dummy text

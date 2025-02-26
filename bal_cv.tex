@@ -19,13 +19,38 @@
 % Load Confidential data
 \IfFileExists{./data/UserPvtInfo.tex}{\input{./data/UserPvtInfo.tex}}{\input{./data/UserPubInfo.tex}}
 
+
 %%%
+%
 % New Command pin, local pin.pdf
+%
+%
 \newcommand*{\localLocPin}{%
   \includegraphics[height=\heightof{M}]{pin}%
 }
 
-%%%
+\newcommand{\MainHeading}[1]{
+    {\noindent \color{ltgrey}\normalsize{\textsc {#1}}}\vspace{6pt}\\ }
+
+\newcommand{\MainSubHeading}[2]{
+   {\noindent \large{\textsc{\textbf{#1} #2}}}\\ }
+
+
+\newcommand{\MainSubHeadingNote}[1]{
+   {\noindent \color{ltgrey}\small{\textit{#1}}}\\ }
+
+
+\newcommand{\RoleDescription}[1]{            % If need, add \vspace{-4mm} at end to adjust space
+   {{\color{black}\scriptsize{#1}}} \\ }
+
+\setlength{\tabcolsep}{0in}
+\newcommand{\isep}{-2 pt}
+\newcommand{\lsep}{-0.5cm}
+\newcommand{\psep}{-0.6cm}
+\newcommand{\sectionsep}{\vspace{8pt}}
+
+% Renew command
+\renewcommand{\labelitemii}{$\circ$}
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
