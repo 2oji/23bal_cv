@@ -62,7 +62,13 @@
                                  %% Display correctly |, <, >
 \usepackage[utf8]{inputenc}      %% translates various standard and other input encodings into a ‘LaTeX internal language’
                                  %% Characters associated with many langugages will display correctly - MUST pkg
-
+%%%
+% all later pages the natural height of the material on that page
+% no rubber vertical lengths will be stretched
+%
+\usepackage{ragged2e}
+%\textheight=9.75in
+\raggedbottom
 
 %%% Symbols
 % fontawesome, marvosym, ifsym few pkgs
