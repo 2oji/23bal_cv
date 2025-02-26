@@ -2,6 +2,8 @@
 #
 #
 # Make by default will make first target
+# First compile pin and then final document
+all: pin bal
 
 bal: bal_cv.tex chirri.cls
 	xelatex bal_cv.tex
@@ -12,9 +14,6 @@ pin: pin.tex
 	latex pin.tex
 	dvipdf pin.dvi
 	dvips pin.dvi
-
-# First compile pin and then final document
-all: pin bal
 
 .PHONY: clean
 clean:
