@@ -35,13 +35,13 @@
 \setlength{\parindent}{0pt}      %(to suppress indentation, when starting a new paragraph)
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DEBUG
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Debug
 % Show layout paramters - \layout or \layout* after \begin{document}
 \usepackage{layout}
 %\usepackage{layouts}             % Illustrates minor details - Useful package
 %
-% Show outerframe, Uncomment this   - DEBUG
-\usepackage{showframe}
+% Show outerframe, Uncomment this   - Debug
+%\usepackage{showframe}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
