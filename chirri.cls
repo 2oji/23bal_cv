@@ -183,7 +183,7 @@
    #1,                                        % Run time arguments at last
 }
 
-\newtcolorbox{masterbox}[2][]{%
+\newtcolorbox{masterbox}[3][]{%
    %blanker,
    blank,
    width=\LeftColWdth,
@@ -198,8 +198,8 @@
    breakable,
       %%%
       % Debug purpose only
-   enhanced,                               % Debug - Grey background
-   show bounding box,                      % Debug
+%   enhanced,                               % Debug - Grey background
+%   show bounding box,                      % Debug
    #2,
       %%%
       % overlay unbroken - so that it prints on first page
@@ -208,7 +208,8 @@
    overlay unbroken and first={%
       \node[inner sep=0pt,outer sep=0pt,
       text width=\RightColWdth,           % 1/3 of textwidth = 0.33 * \textwidth
-         draw=blue, fill=red!5!white,        % Debug
+%         draw=blue, fill=red!5!white,        % Debug
+         #3,
          %%%
          % align - left, right, center, flush left, flush right
          align=left,
