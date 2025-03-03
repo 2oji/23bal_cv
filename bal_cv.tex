@@ -52,6 +52,9 @@
 % Renew command
 \renewcommand{\labelitemii}{$\circ$}
 
+% Space before and after bullet
+\newcommand{\BAspaceBullet}{\space{\textbullet}\space}
+
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 %\layout                    % Debug
@@ -60,10 +63,10 @@
 %\begin{headingbox}[skin=bicolor,colbacklower=yellow,lower separated=true]     % Debug
 \begin{headingbox}[]
    \UserName{} \\
-   Software Architect \textbullet Embedded developer \\
-   \textbullet Boot \textbullet Linux device driver \textbullet UFS  \\
+   Software Architect \BAspaceBullet Embedded developer \\
+   \BAspaceBullet Boot \BAspaceBullet Linux device driver \BAspaceBullet UFS  \\
    Experience \UserExperience{} Years    \\
-   \faPhone{} \UserMobile{} \textbullet \space \faEnvelope{} \space \UserEmailID{}
+   \faPhone{} \UserMobile{} \BAspaceBullet \space \faEnvelope{} \space \UserEmailID{}
 %
 %
 \tcblower
