@@ -54,14 +54,6 @@
 \usepackage{tabularx}
 
 
-%%% Fonts & Encodings
-%
-%
-\usepackage{palatino}            %% Switch to Palladio font
-\usepackage[T1]{fontenc}         %% Support of 8 bit encoding 256 glyphs
-                                 %% Display correctly |, <, >
-\usepackage[utf8]{inputenc}      %% translates various standard and other input encodings into a ‘LaTeX internal language’
-                                 %% Characters associated with many langugages will display correctly - MUST pkg
 %%%
 % all later pages the natural height of the material on that page
 % no rubber vertical lengths will be stretched
