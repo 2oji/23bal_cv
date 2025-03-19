@@ -17,10 +17,16 @@
 %%% Fonts & Encodings
 %
 %
-% URW Palladio font - https://www.tug.org/FontCatalogue/urwpalladio/
-\usepackage[sc]{mathpazo}
-\linespread{1.05}                % Palladio needs more leading (space between lines)
 
+% URW Palladio font - https://www.tug.org/FontCatalogue/urwpalladio/
+%\usepackage[sc]{mathpazo}
+%\linespread{1.05}                % Palladio needs more leading (space between lines)
+
+% Tex Gyre Pagella advanced version of URW Palladio with Math support
+% This has OTF and TTF files also
+\usepackage{tgpagella}
+
+% Font encoding
 \usepackage[T1]{fontenc}         % fontenc shall be at last after selecting font
                                  % Support of 8 bit encoding 256 glyphs
                                  % Display correctly |, <, >
