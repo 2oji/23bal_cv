@@ -24,7 +24,7 @@
 
 % Tex Gyre Pagella advanced version of URW Palladio with Math support
 % This has OTF and TTF files also
-\usepackage{tgpagella}
+%\usepackage{tgpagella}
 
 % Font encoding
 \usepackage[T1]{fontenc}         % fontenc shall be at last after selecting font
@@ -33,4 +33,16 @@
 \usepackage[utf8]{inputenc}      % translates various standard and other input encodings into a ‘LaTeX internal language’
                                  % Characters associated with many langugages will display correctly - MUST pkg
 
+%%%
+% OpenType and True Type font
+%
+\usepackage{fontspec}
+
+\setmainfont{UniversNextProLightCond}[
+   Path = fonts/univers_pro/ ,
+   Extension = .ttf ,
+   BoldFont = UniversNextProBoldCond,
+   BoldItalicFont = UniversNextProBoldCondIt,
+   ItalicFont = UniversNextProLightCondIt,
+]
 
