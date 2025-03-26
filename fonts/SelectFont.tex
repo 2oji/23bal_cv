@@ -18,31 +18,49 @@
 %
 %
 
+\def\ChooseFont{UniversNextPro}
+\def\FontURWPalladio{URWPalladio}
+\def\FontTGPagella{TGPagella}
+\def\FontUniversNextPro{UniversNextPro}
+
 % URW Palladio font - https://www.tug.org/FontCatalogue/urwpalladio/
-%\usepackage[sc]{mathpazo}
-%\linespread{1.05}                % Palladio needs more leading (space between lines)
+\ifx\ChooseFont\FontURWPalladio
+   \usepackage[sc]{mathpazo}
+   \linespread{1.05}                % Palladio needs more leading (space between lines)
+
+   % Font encoding
+   \usepackage[T1]{fontenc}         % fontenc shall be at last after selecting font
+                                    % Support of 8 bit encoding 256 glyphs
+                                    % Display correctly |, <, >
+   \usepackage[utf8]{inputenc}      % translates various standard and other input encodings into a ‘LaTeX internal language’
+                                    % Characters associated with many langugages will display correctly - MUST pkg
+\fi
 
 % Tex Gyre Pagella advanced version of URW Palladio with Math support
 % This has OTF and TTF files also
-%\usepackage{tgpagella}
+\ifx\ChooseFont\FontTGPagella
+   \usepackage{tgpagella}
 
-% Font encoding
-\usepackage[T1]{fontenc}         % fontenc shall be at last after selecting font
-                                 % Support of 8 bit encoding 256 glyphs
-                                 % Display correctly |, <, >
-\usepackage[utf8]{inputenc}      % translates various standard and other input encodings into a ‘LaTeX internal language’
-                                 % Characters associated with many langugages will display correctly - MUST pkg
+   % Font encoding
+   \usepackage[T1]{fontenc}         % fontenc shall be at last after selecting font
+                                    % Support of 8 bit encoding 256 glyphs
+                                    % Display correctly |, <, >
+   \usepackage[utf8]{inputenc}      % translates various standard and other input encodings into a ‘LaTeX internal language’
+                                    % Characters associated with many langugages will display correctly - MUST pkg
+\fi
 
 %%%
 % OpenType and True Type font
 %
-\usepackage{fontspec}
+\ifx\ChooseFont\FontUniversNextPro
+   \usepackage{fontspec}
 
-\setmainfont{UniversNextProLightCond}[
-   Path = fonts/univers_pro/ ,
-   Extension = .ttf ,
-   BoldFont = UniversNextProBoldCond,
-   BoldItalicFont = UniversNextProBoldCondIt,
-   ItalicFont = UniversNextProLightCondIt,
-]
+   \setmainfont{UniversNextProLightCond}[
+      Path = fonts/univers_pro/ ,
+      Extension = .ttf ,
+      BoldFont = UniversNextProBoldCond,
+      BoldItalicFont = UniversNextProBoldCondIt,
+      ItalicFont = UniversNextProLightCondIt,
+   ]
+\fi
 
