@@ -5,7 +5,7 @@
 # First compile pin and then final document
 all: pin bal
 
-bal: bal_cv.tex chirri.cls
+bal: bal_cv.tex design
 	xelatex bal_cv.tex
 	xelatex bal_cv.tex
 
