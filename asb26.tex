@@ -86,8 +86,8 @@
 %    This frame spans the full text width so that data will flow from left
 %    column to this one.
 \newflowframe[2]{\textwidth}{\textheight}{0pt}{0pt}[full]
-%   Frame 3
-\newflowframe[1]{\RIGHTCOLUMNWIDTH}{\textheight}{\SIDEBYSIDEGAP}{0pt}[right]
+%  Page 1 - Right Column - Frame 3
+\newstaticframe[1]{\RIGHTCOLUMNWIDTH}{\textheight}{\SIDEBYSIDEGAP}{0pt}[right]
 
 %%%
 % Modify flowframe attribute
@@ -96,17 +96,16 @@
 %   Frame ID allocated in order it is defined
 \setflowframe{1}{label=hi, backcolor=red}
 \setflowframe{2}{backcolor=yellow}
-\setflowframe{3}{backcolor=green}
+\setstaticframe{1}{backcolor=green}
 
 % --- Begin Document ---
 \begin{document}
 %\flowframeshowlayout
 %\layout                    % Debug
 
-\lipsum[1-7]
-\framebreak
-\lipsum[4-6]
-\framebreak
-\lipsum[1]
+\lipsum[1-9]
+\begin{staticcontents*}{right}
+ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY
+\end{staticcontents*}
 
 \end{document}
