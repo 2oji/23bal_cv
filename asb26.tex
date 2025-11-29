@@ -46,8 +46,20 @@
 
 \newcommand{\RightColWdth}{0.33\textwidth}
 
-\usepackage{flowfram}
 %%%%
+\usepackage[draft]{flowfram}
+%
+% draft option will draw the bounding boxes for each defined frame.
+%  Bottom right of each bounding box (except for the bounding box
+%  denoting the typeblock), a marker will be shown in the form: [T:IDN;IDL]
+%  -  draft option set all conditionals to true
+%      \showtypeblocktrue  % Display the bounding box for the typeblock.
+%      \showtypeblockfalse % Do not display the bounding box for the typeblock.
+%      \showmarginstrue    % Display the bounding box for the margins.
+%      \showmarginsfalse   % Do not display the bounding box for the margins.
+%      \showframebboxtrue  % Display the bounding box for the frames.
+%      \showframebboxfalse % Do not display the bounding box for the frames
+%
 % The text of the document environment will flow from one frame to the next in
 %  order of definition.
 %
@@ -67,9 +79,18 @@
 %   Frame 2
 \newflowframe{0.5\textwidth}{\textheight}{0.5\textwidth}{0pt}[right]
 
+%%%
+% Modify flowframe attribute
+% \setflowframe{ID-list}{key=value list}
+%   ID-list can be found with draft option
+%   Frame ID allocated in order it is defined
+\setflowframe{1}{label=hi, backcolor=red}
+\setflowframe{2}{backcolor=yellow}
 
 % --- Begin Document ---
 \begin{document}
+\flowframeshowlayout
+%\layout                    % Debug
 
 \lipsum[1-3]
 \framebreak
