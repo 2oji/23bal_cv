@@ -145,7 +145,7 @@
 %    Define the page layout for SUBSEQUENT pages (from page 2 onwards)
 %    This frame spans the full text width so that data will flow from left
 %    column to this one.
-\newflowframe[2]{\textwidth}{\textheight}{0pt}{0pt}[full]
+\newflowframe[>1]{\textwidth}{\textheight}{0pt}{0pt}[full]
 
 %% --- [draft] Colored frames --- DEBUG
 % Modify flowframe attribute
