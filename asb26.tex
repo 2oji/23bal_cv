@@ -44,8 +44,6 @@
 % Show outerframe, Uncomment this   - Debug
 \usepackage{showframe}
 
-\newcommand{\RightColWdth}{0.33\textwidth}
-
 %%%%
 \usepackage[draft]{flowfram}
 %
@@ -73,11 +71,18 @@
 %    keywords: all, odd, even or none, or by a comma-separated list of either
 %    individual page numbers or page ranges. If page-list is omitted, all assumed.
 %
+\def\LEFTCOLUMNWIDTH  {0.65\textwidth}            % 2/3 of text width
+\def\RIGHTCOLUMNWIDTH {0.32\textwidth}            % 1/3 of text width
+\def\SIDEBYSIDEGAP {0.68\textwidth}
+
+\newcommand{\LeftColWdth}{0.66\textwidth}
+\newcommand{\RightColWdth}{0.33\textwidth}
+
 %  Page 1 - Left and Right layout
 %   Frame 1
-\newflowframe{0.5\textwidth}{\textheight}{0pt}{0pt}[left]
+\newflowframe{\LEFTCOLUMNWIDTH}{\textheight}{0pt}{0pt}[left]
 %   Frame 2
-\newflowframe{0.5\textwidth}{\textheight}{0.5\textwidth}{0pt}[right]
+\newflowframe{\RIGHTCOLUMNWIDTH}{\textheight}{\SIDEBYSIDEGAP}{0pt}[right]
 
 %%%
 % Modify flowframe attribute
