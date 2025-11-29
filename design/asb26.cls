@@ -136,6 +136,7 @@
 %
 %  Page 1 - Right Column - Static F2
 \newstaticframe[1]{\RIGHTCOLUMNWIDTH}{\titleY}{\SIDEBYSIDEGAP}{0pt}[right]
+\setstaticframe{2}{valign=t}        % Page 19 flowfram.pdf, default c
 %
 %  Page 1 - Left column - Flow F 1
 \newflowframe[1]{\LEFTCOLUMNWIDTH}{\titleY}{0pt}{0pt}[left]
