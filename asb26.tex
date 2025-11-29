@@ -44,6 +44,8 @@
 % Show outerframe, Uncomment this   - Debug
 \usepackage{showframe}
 
+\usepackage{calc}                %% To calculate the localLocPin
+
 %%%%
 \usepackage[draft]{flowfram}
 %
@@ -78,12 +80,25 @@
 \newcommand{\LeftColWdth}{0.66\textwidth}
 \newcommand{\RightColWdth}{0.33\textwidth}
 
-%  Page 1 - Right Column - Frame 1
-%  Static frame
-\newstaticframe[1]{\RIGHTCOLUMNWIDTH}{\textheight}{\SIDEBYSIDEGAP}{0pt}[right]
-%  Page 1 - Left column - Frame 2
-\newflowframe[1]{\LEFTCOLUMNWIDTH}{\textheight}{0pt}{0pt}[left]
-%  Page 2 & onwards - Full page - Frame 3
+% define lengths to help compute positions
+\newlength\titleH
+\newlength\titleW
+\newlength\titleY
+
+% Create a static frame to put title in
+\setlength{\titleH}{3cm}
+\setlength{\titleW}{\textwidth}                 % Set textwidth
+\setlength{\titleY}{\textheight}                % Set textheight
+\addtolength{\titleY}{-\titleH}                 % Decrease Title Height by titleH
+%  Page 1 - Title Column - Static F1
+\newstaticframe[1]{\titleW}{\titleH}{0pt}{\titleY}[title]
+%
+%  Page 1 - Right Column - Static F2
+\newstaticframe[1]{\RIGHTCOLUMNWIDTH}{\titleY}{\SIDEBYSIDEGAP}{0pt}[right]
+%
+%  Page 1 - Left column - Flow F 1
+\newflowframe[1]{\LEFTCOLUMNWIDTH}{\titleY}{0pt}{0pt}[left]
+%  Page 2 & onwards - Full page - Flow F 2
 %    Define the page layout for SUBSEQUENT pages (from page 2 onwards)
 %    This frame spans the full text width so that data will flow from left
 %    column to this one.
@@ -94,7 +109,8 @@
 % \setflowframe{ID-list}{key=value list}
 %   ID-list can be found with draft option
 %   Frame ID allocated in order it is defined
-\setstaticframe{1}{backcolor=green}
+\setstaticframe{1}{backcolor=magenta}
+\setstaticframe{2}{backcolor=green}
 \setflowframe{1}{label=hi, backcolor=red}
 \setflowframe{2}{backcolor=yellow}
 
@@ -104,6 +120,9 @@
 %\layout                    % Debug
 
 \begin{staticcontents}{1}
+ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY
+\end{staticcontents}
+\begin{staticcontents}{2}
 ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY ALL WORK AND NO PLAY MAKES JACK A DULL BOY
 \end{staticcontents}
 \lipsum[1-9]
