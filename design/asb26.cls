@@ -132,20 +132,20 @@
 \setlength{\titleY}{\textheight}                % Set textheight
 \addtolength{\titleY}{-\titleH}                 % Decrease Title Height by titleH
 %  Page 1 - Title Column - Static F1
-\newstaticframe[1]{\titleW}{\titleH}{0pt}{\titleY}[title]
+\newstaticframe[1]{\titleW}{\titleH}{0pt}{\titleY}[TitleCL]
 \setstaticframe{1}{valign=t}        % Page 19 flowfram.pdf, default c
 %
 %  Page 1 - Right Column - Static F2
-\newstaticframe[1]{\RIGHTCOLUMNWIDTH}{\titleY}{\SIDEBYSIDEGAP}{0pt}[right]
+\newstaticframe[1]{\RIGHTCOLUMNWIDTH}{\titleY}{\SIDEBYSIDEGAP}{0pt}[RightCL]
 \setstaticframe{2}{valign=t}
 %
 %  Page 1 - Left column - Flow F 1
-\newflowframe[1]{\LEFTCOLUMNWIDTH}{\titleY}{0pt}{0pt}[left]
+\newflowframe[1]{\LEFTCOLUMNWIDTH}{\titleY}{0pt}{0pt}[LeftCL]
 %  Page 2 & onwards - Full page - Flow F 2
 %    Define the page layout for SUBSEQUENT pages (from page 2 onwards)
 %    This frame spans the full text width so that data will flow from left
 %    column to this one.
-\newflowframe[>1]{\textwidth}{\textheight}{0pt}{0pt}[full]
+\newflowframe[>1]{\textwidth}{\textheight}{0pt}{0pt}[FullCL]
 
 %% --- [draft] Colored frames --- DEBUG
 % Modify flowframe attribute
