@@ -83,12 +83,11 @@
 \usepackage{layout}
 % \usepackage{layouts}             % Illustrates minor details - Useful package
 
-%% --- Show frame of the layout --- DEBUG
-% Show outerframe, Uncomment this   - Debug
-\usepackage{showframe}
+%% --- Show outerframe of the layout --- DEBUG
+%\usepackage{showframe}
 
 %% --- [draft] show all boundaries --- DEBUG
-\usepackage[draft]{flowfram}
+\usepackage{flowfram}
 %
 % draft option will draw the bounding boxes for each defined frame.
 %  Bottom right of each bounding box (except for the bounding box
@@ -158,8 +157,9 @@
 % \setflowframe{ID-list}{key=value list}
 %   ID-list can be found with draft option
 %   Frame ID allocated in order it is defined
-\setstaticframe{1}{backcolor=magenta}
-\setstaticframe{2}{backcolor=green}
-\setflowframe{1}{label=hi, backcolor=red}
-\setflowframe{2}{backcolor=yellow}
+%
+% \setstaticframe{1}{backcolor=magenta}
+% \setstaticframe{2}{backcolor=green}
+% \setflowframe{1}{label=hi, backcolor=red}
+% \setflowframe{2}{backcolor=yellow}
 
