@@ -8,10 +8,51 @@
 %
 % About
 %
-\MainHeading{About}
+\MainHeading{About}\footnotesize{%
+   Proficient in Boot Loader, Linux programming and OS concepts is matched by my expertise in porting Linux onto ARM based devices, as well as my ability to effeciently deliver new features, resolving complex bugs, analysing the scenarios, use-cases, handle board bring-up activities, including bootloader compilation and downloading on the target board.
+   \newline%
+   With a strong background in programming and data structures, I have a good understanding of Linux internals and strong debugging skills alog with expertise on I2C, SPI, UFS, MDIO, Ethernet stack and Layer 2 of OSI model.
+   \newline%
+   Actively engaged with relevant stakeholders, customers, CE teams to driver features and issues to end.
+}
+\vspace{4pt}
+
 
 %
 % Experience
+%
+\MainHeading{Technical Skills}
+\vspace{-\topsep}\vspace{2pt}
+\footnotesize {
+   \begin{itemize}\itemsep\isep
+      %\item \noindent Having a 3 year's experience as embedded software developer on LINUX operating system.
+      %\item \noindent Involved in customer gathering and proposed efficient solutions.
+      \item \noindent Working on Linux kernel and Zephyr OS.
+      \item \noindent Experience in MAC driver for ethernet at L2.
+      \item \noindent Knowledge of Network Pakcet flow and with TCP/IP layer.
+      \item \noindent Planned the software architecture as per customer's requirement.
+      \item \noindent Done the Board Bring up, porting of u-boot, device-tree and linux.
+      \item \noindent Experience in debugging of interface like DDR, NAND, I2C, SPI and UART.
+      \item \noindent Experience in networking for L2, priority scheduling, Round Robin scheduling.
+      \item \noindent Experience in TCP/IP, UDP, layer 2, layer 4 and complete network packet flow.
+      \item \noindent Experience in Ethernet driver, socket buffers i.e. skb packets to prioritize UDP packets.
+      \item \noindent Write slave drivers for I2C and SPI for micro-processor, as Linux kernel doesn’t provide support for slave mode.
+      \item \noindent Write linux device driver to access DDR for firmware upgrade \& fail-safe mechanism.
+      \item \noindent Experience with interfaces like NAND, EMMC, Ethernet, USB, DDR, NOR, Sd-Card, Bluetooth.
+      \item \noindent Experience in debugging I2C, SPI, UART slave devices and at linux user space.
+      \item \noindent Customized boot-loader and Linux operating system for embedded platforms.
+      \item \noindent Experienced with i.MX 6 sabresd/sololite, Mini2440, 
+      \href{http://www.radiumboards.com/TI\_TDA2x\_Based\_xCAM\_Platform.php}{\textbf{\underline{TI's TDA2x}}},
+      \href{http://www.nxp.com/products/reference-designs/qoriq-ls1021a-iot-gateway-reference-design:LS1021A-IoT}{\textbf{\underline{LS1021A-IOT}}} boards.
+         \item \noindent Experience with processors like TI's omap, Freescale's i.MX 6, Qualcomm's IPQ4029 \& IPQ4029.
+         \item \noindent Ported the Marvell 88E6352 chip in linux and u-boot based on Distributed Switch Architecture for Ethernet.
+         %\item \noindent Experience with SDK: Yocto, Openwrt, VISION\_SDK.
+         %\item \noindent Having a good analysis and debugging skills.
+         \end{itemize}
+}
+
+%
+%
 %
 \MainHeading{Experience}
 
@@ -23,33 +64,56 @@
 \MainSubHeading{\CompanyV{}}{| Staff Engineer}
 \MainSubHeadingNote{\CompanyVexp{}}
 \RoleDescription{%
-   Overall Non-HLOS Storage technology POC's for all the AUTO SOC's primarily handling UFS technology \& its dependency across subsystem like PBL, PMIC, IMEM, DDR and Boot \textendash{} delivering optimizations related to boot, flashing, new features along with debugging Production line, Customer \& Blocker issues. \newline
-   Effectively handling stakeholders across management, CE, Customers and internal teams.%
+   Handling storage technology for all the AUTO SOC's primarily for UFS \& its dependency across subsystem like PBL, PMIC, IMEM, DDR and boot. Optimize the existing feature to be more robust and more efficient.
+%   Overall Non-HLOS Storage technology POC's for all the AUTO SOC's primarily handling UFS technology \& its dependency across subsystem like PBL, PMIC, IMEM, DDR and Boot \textendash{} delivering optimizations related to boot, flashing, new features along with debugging Production line, Customer \& Blocker issues. \newline
+   Effectively addressing stakeholders across management, CE, Customers and internal teams for the timelines.%
 }
 \vspace{-\topsep}\vspace{2pt}
 \begin{itemize}\itemsep\isep
 \footnotesize {
-   \item \noindent \textbf{UFS - Boot KPI} improvements \textemdash{} by 200msec \\
-      \BAspaceBullet UFS partial Init               \BAspaceBullet XBL - Skip UFS PHY settings    \BAspaceBullet Remove retry of UFS2.x \\
+      %
+      %
+      \item \noindent {\textbf{Optimize UFS probe}}, Designed feature to optimize the UFS probe of Linux kernel to improve the performance by 90msec. UFS PHY is already initalized at PBL stage and same state can be leveraged to Linux kernel i.e. to skip the PHY operation. Removed registration to put the UFS device in sleep mode as part of UEFI Exit Boot services, as when HLOS is loaded UFS remains in active state. Implemented backend apis to set voltage, clock and reset for UFS driver in backend GearVM driver to support this feature.
+      %
+      %
+   \item \noindent \textbf{UFS - Boot KPI} Optimize the boot flow for improvements \textemdash{} by 200msec \\
+      \BAspaceBullet UFS partial Init               \BAspaceBullet Remove retry of UFS2.x \\
       \BAspaceBullet Remove read in PWM Gear        \BAspaceBullet UFS read increased to 256MB data   \\
-      \BAspaceBullet UFS \textbf{Scatter-Gather}    \BAspaceBullet PMIC init parallel to UFS
-      \item \noindent Design Mission \& Non-mission mode for UFS - a Licensed programme.
-      \item \noindent {\textbf{UFS successful bringup of LeMans}}, Company's first ever AUTO SOC i.e. SA8255.
-      \vspace{-\topsep}\vspace{0pt}    % Remove any vertical spaced added by itemsep
-%
-      \begin{itemize}\itemsep\isep
-      \item \noindent Analyze \& Quickly issue Clock fix for UFS to un-block Bring up.
-      %\item \noindent UFS successful bringup of LeMans, Monaco, AminiAQ \& Pinnacles.
-      %\item \noindent Well planned tasks, checks, review designed for BU activities.
-      %\item \noindent Prepared Back up plans for UFS prior to BU.
-      \end{itemize}\vspace{-1mm}%
-%
+      \BAspaceBullet PMIC init parallel to UFS
+      \item \noindent Design Mission \& Non-mission mode feature for UEFI - a Licensed programme where subscribed AUTO OEMs will get whole feature as per JEDEC spec to validate the UFS device in UEFI. Implemented Health Customers test-cases 
+%%      \item \noindent {\textbf{UFS successful bringup of LeMans}}, Company's first ever AUTO SOC i.e. SA8255.
+%%      \vspace{-\topsep}\vspace{0pt}    % Remove any vertical spaced added by itemsep
+%%%
+%%      \begin{itemize}\itemsep\isep
+%%      \item \noindent Analyze \& Quickly issue Clock fix for UFS to un-block Bring up.
+%%      \end{itemize}\vspace{-1mm}%
+%%%
       \item \noindent Developed the \textit{provisioning for UFS and descriptor} access apis.
       \item \noindent Supported UFS Write Booster parameters to enhance flashing.
       \item \noindent Quest test-cases in UEFI to facilitate UFS validations.
       \item \noindent Leading Design/Development for UFS across teams like PMIC, Clocks \& Boot.
-      \item \noindent Supported CE teams across the globe for storage related issues.
+      \item \noindent Supported CE teams across the globe having different time zones for storage related issues.
       \item \noindent Collaborating in Design discussions, Documentation, code reviews \& technical issues.
+      \item \noindent Actively engaged in customer issues and driving from storage side.
+      %
+      % PA_AvailTxDataLanes and PA_AvailRxDataLanes to 2 in PBL and give it a try.
+      \item \noindent {\textbf{UFS Phy Skip}} Optimize the KPI by 100 msec by leveraging the UFS PHY configurations of PBL. Worked along with PBL team for the proper UFS PHY configurations. Resolved the bug in XBL while enabling 2 lanes as PA\_Avail Lanes parameter is not set to 2 which is originated from PBL.
+      %
+      %
+      \item \noindent {\textbf{Scatter Gather Feature}} Designed and Implemented the Scatter Gather functionality for UFS read operation where data from UFS LBA is loaded at various DDR memory addresses to support loading of boot images. This has eliminated the multiple read operation with single read operation which has resulted in 70\% improvement in KPI.
+      %
+      % LeMans: PHY Init fails as PHY is configured HSG4 and 2 lane settings. SERDES start is failing as issue is with Clocks - Here Skip the PHY setting to use the PBL one and un-block other teams.
+      \item \noindent {\textbf{UFS successful bringup of LeMans}}, Company's first ever AUTO SOC i.e. SA8255. Meticulously planned for all the use-cases of UFS for XBL, UEFI, flashing tools and its challenges, limitations and dependencies. Resolved critical issues related to clock while enabling 2 lanes for UFS in XBL. Release workaround to unblock other teams till the proper fix.  Successfully done the UFS Bring up number of Auto SOC's i.e. SA8775, SA8620, SA8797.
+      %
+      %
+      \item \noindent {\textbf{UFS Cache BUG per 50K iterations}}, Several UFS commands are failing like to get bootable LUN, geometry, config and unit descriptors. Each failure has different use-case. Analayzed all the failure errors where commands are successfully received at UFS device which futher processed the right response to Host controller. Here, Host observed the mismatch in command sent and received response which marks failure of all these use-cases. Issue is with cache memory where Host is reading the stale response that cause this mismatch. Flushing the cache memory resolved this issue.
+      %
+      %
+      \item \noindent {\textbf{Firt UFS read cmd fails after PMIC init}}, Analyzed and solved this critical bug, where UFS read is failing after PMIC initialization and reported error in PA DL layers. Adding delay and re-issue same command would have averted this issue. Furhter read operations are passing. Here, observed that ufs read cmd is passing with PON sequence and failed after that. Observed the likely events that can affect UFS so found that PMIC initialization is driving UFS voltage and strengths. Furhter found that PSI values are different from PON sequence and can crate jitters in first UFS read operation. Issue routed to PMIC team.
+      %
+      % UEFI - remove SSU2 commands and do not put device in sleep mode + clock gating.
+      % HLOS saw UFS down so it has to re-init the while PHY sequence.
+      % \item \noindent Re-designed the UFS driver in UEFI, GearVM and in HLOS to improve the boot time by 90msec. Here, UEFI has to skip issuing hibernate command as part of exit boot services and HLOS has to skip the PHY initialization sequence as UFS device is in active state. So, HLOS has to do partial initialization to initialize its stack which requires support from GearVM for individual apis for voltage, clock, reset and PHY configurations.
 }
 \end{itemize}\vspace{-\topsep}%
 \sectionsep
@@ -59,6 +123,7 @@
 % Company
 %
 %
+\thispagestyle{plain}
 \MainSubHeading{\CompanyIV{}}{| Technical Leader}
 \MainSubHeadingNote{\CompanyIVexp{}}
 \RoleDescription{%
@@ -125,16 +190,208 @@
 \MainSubHeading{\CompanyI{}}{| Senior Engineer}
 \MainSubHeadingNote{\CompanyIexp{}}
 \RoleDescription{%
-   Responsible for Board Bring up, linux device driver, booting and system level programming. Experienced on I2C, SPI, MDIO, Ethernet, Wireless, Bluetooth, DDR and integrating memories i.e. NAND, eMMC with HOST SOC's.
+Responsible for Board Bring up activities, porting, linux device driver, u-boot, Linux kernel, device-tree and system level programming for various targets like TI OMAP, TI TDA2XX, TI DaVinci(DM388), Freescale i.MX 6, Qualcomm IPQ4028 \& IPQ4029 processsors.\newline
+Worked on embedded protocols like I2C, SPI, Ethernet, MDIO, Wireless, Bluetooth, DDR and integrating memories i.e. NAND, eMMC with HOST controllers.\newline
+Written applications in C for use-cases for Wireless demons like hostapd, udhcpc, udhcpd, wap\_supplicant, wpa\_supplicant. \newline
+Implemented IPC's, Multi Thread programming, Socket Programming.
 }
 \vspace{-\topsep}\vspace{2pt}    % Remove any vertical spaced added by itemsep
 \begin{itemize}\itemsep\isep
 \footnotesize {
    \item \noindent Board Bring UP of multiple targets like TI's DM388, TDA2xx and Freescale i.MX6 series.
    \item \noindent Linux device driver to configure HOST DM388 in slave mode over I2C \& SPI bus.
-   %\item \noindent System level programming.
    \item \noindent Porting of u-boot, linux kernel, device-tree \& System level programming.
    \item \noindent Developed Applications for hostapd \& wpa supplicant to configure Wi-Fi targets. 
 }
 \end{itemize}\vspace{-\topsep}%
+\vspace{4pt}
+\footnotesize {
+\hspace{0.25cm}{\textbf{Marvell Gigabit Ethernet Switch Integration}}\newline
+   Integrate the i.MX6 sololite \& TI's DM8168 processor with \href{https://www.marvell.com/switching/link-street/}{\textbf{Marvell 88E6352 switch}} having 7 ports, 1 SERDES and 5 PHY's with gigabit ethernet support. Marvell switch intergarted with processor directly with PHY less PORT. i.MX6 sololite configured in RMII configuration and DM8168 configured GMII mode. \newline
+   \emph{Challenge} is to understand the Marvell switch integration with controller.
+%, learned about MDIO framework
+      \newline
+      \emph{Responsibilities:}
+      \begin{itemize}\itemsep \isep
+         \item Understands controller engagement with switch over phy-less port i.e PORT 6 of switch.
+         \item At u-boot, PHY support is added and configure the processor in RMII mode for i.MX6.
+         \item Resolved the ping bug, by adding delay at phy side.
+         \item In linux, ethernet driver is modified to keep the link permanently up.
+      \end{itemize}
+}
+
+
+\hspace{0.25cm}\href{https://www.qualcomm.com/products/ipq4028}{\textbf{Wireless AP-CPE }}%\hfill Duration: 2 months
+   %\item {\textbf{Wireless AP-CPE}}%\hfill Duration: 5 months
+%    \emph{Platform : Linux\hfill Build-SDK: openwrt\\ Role : Software Developer} \\[-0.6cm]
+   % \makebox[\linewidth][s]{\emph{CPE establish Ethernet 1Gig connection with i.MX 6 based board and sends it's data to AP board over wireless 5Gig channel.}}
+   Based on Dakota reference board having Qualcomm IPQ4028 chipset and integrated with BLE module, SPI-Nor flash, USB-OTG, Ethernet Atheros Phy, 2x2 Wi-Fi 5G and 2G radios. Provides various applications as Access points, Home Routers and as Customer Premises Equipment i.e. CPE.
+   \newline
+	\emph{Responsibilities:}
+	\begin{itemize}\itemsep \isep
+	\item Board Bring-Up.
+	\item Porting of Linux, Device-Tree , U-Boot and Board Bring-Up activities.
+	\item Removed the support of 5 Port Phy i.e. QCA8075.
+	\item Provide support for Atheros 8033 phy in linux in u-boot and kernel.
+	\item Configured the uart interface for BLE i.e. CSR1012 module.
+	\item Bug-Fix for auto-negotiation of PHY i.e. provide support of 10/100MBps.
+	\item System level implementation to Dynamically Configured as Access Point or as CPE. % based on gpio.
+	\end{itemize}
+
+\hspace{0.25cm}{\textbf{Packet Prioritization}}\newline
+	Based on the NXP's
+        \href{http://www.nxp.com/products/reference-designs/qoriq-ls1021a-iot-gateway-reference-design:LS1021A-IoT}{\textbf{\underline{LS1021A-IOT}}}
+board. UDP Network packets sent on high priority through ethernet. Locate the UDP packets having specific destination port and mapped them to high priority queues with the support of existing eTSEC hardware.
+        \newline
+        \emph{Responsibilities:}
+        \begin{itemize}\itemsep \isep
+            \item Implemetation done in device tree and gianfar driver.
+            \item Capture the socket buffers for UDP packets, having a specific destination port at layer 4.
+            \item Mapped the socket buffers to high priority queues.
+            \item Enable the High Priority Scheduling, supported by eTSEC hardware at layer 2.
+            \item Enables the Weight Round Robin mechanism to send mapped packet at Egress port.
+        \end{itemize}
+
+\hspace{0.25cm}{\href{https://youtu.be/xr9ez-oayiI}{\textbf{ADAS Multi-sensor fusion Camera}}}\newline
+ 	Based on TI's TDA2xx OMAP processor to captures data from various sensors and fuses all that data to produce a unique frame for Automotive industry for ADAS applications. It is also integrated with DaVinci Digita Media processor i.e DM388, for high resolution images through board to board connector. TDA2xx Processor fuses the data from sensor and DM388 processor to produce a video which is streamed on HDMI.
+        \newline
+        \emph{Responsibilities:}
+        \begin{itemize}\itemsep \isep
+        \item U-boot and Linux Kernel firmware porting for DM388 and Tda2xx
+        \item Configured SPI bus for Mems Thermal Sensor in Tda2xx.
+        \item Write the I2C slave driver for DM388 as linux kernel don’t provide support for I2C slave mode.
+        \item Modify the SPI driver for DM388 to support slave configuration.
+        \item DDR Performance with Cachebench utility.
+        \item Testing of Ethernet interface i.e.\ validation of 1 GigaBit link at linux user space with iperf and ethtool.
+        \item Testing of USB 3.0 interface at linux user space.
+        \item Nand flash: Partitionin of NAND flash.
+        \end{itemize}
+ 
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+
+ %%  \item \href{https://www.qualcomm.com/products/ipq4028}{\textbf{\underline{Wireless AP-CPE}}}%\hfill Duration: 2 months
+ %%  %\item {\textbf{Wireless AP-CPE}}%\hfill Duration: 5 months
+ %%  \\
+ %%   \emph{Platform : Linux\hfill Build-SDK: openwrt\\ Role : Software Developer} \\[-0.6cm]
+ %%  \\ \\
+ %%  % \makebox[\linewidth][s]{\emph{CPE establish Ethernet 1Gig connection with i.MX 6 based board and sends it's data to AP board over wireless 5Gig channel.}}
+ %%  Based on Dakota reference board having Qualcomm Internet Processor IPQ4028 chipset and integrated with BLE module, SPI-Nor flash, USB-OTG, Ethernet Atheros Phy, 2x2 Wi-Fi 5G and 2G radios. Provides various applications as Access points, Home Routers and as Customer Premises Equipment i.e. CPE.
+ %%  \\
+ %%  	\emph{Responsibilities:}
+ %%  	\begin{itemize}\itemsep \isep
+ %%  	\item Board Bring-Up.
+ %%  	\item Porting of Linux, Device-Tree and U-Boot.
+ %%  	\item Ported for different processor chipset i.e. Internet Processor Chipset changed to IPQ4028.
+ %%  	\item Removed the support of 5 Port Phy i.e. QCA8075.
+ %%  	\item Provide support for Atheros 8033 phy in linux.
+ %%  	\item Configured the uart interface for BLE i.e. CSR1012 module.
+ %%  	\item Resolved the bug for auto-negotiation of PHY i.e. provide support of 10/100MBps.
+ %%  	\item Dynamically Configured as Access Point or as CPE based on gpio.
+ %%  	\end{itemize}
+ %%  
+ %%  \item {\textbf{Smart Secure Home Automation Gateway}}%\hfill Duration: 5 months
+ %%  \\
+ %%   \emph{Platform : Linux\hfill Build-SDK: Yocto\\ Role : Software Developer} \\[-0.6cm]
+ %%  \\ \\
+ %%   \makebox[\linewidth][s]{\emph{Automate the entire home for certain events, smarter way to care the dear ones and be in-touch in busy bee life.}}
+ %%  Based on Yocto's Freescale i.MX 6 processor and Zigbee CC2538, integrated with Spi-Nor flash, Sd-card, USB-OTG, Ethernet, Wi-Fi, Zig-bee, Bluetooth and SIMCOM Sim800 module. Call and Send SMS on certain events like fall-detect, inactivity alert, panic-situation  from zigbee devices. Send infomation to mobile app through cloud access. Automates the entire home with Smart-Plug through cloud/Wi-Fi from Mobile App. Access to Cloud in a smarter way through Ethernet/Wi-Fi/Sim800 modules. Firmware Upgrade through Mobile App.
+ %%  \\
+ %%  	\emph{Responsibilities:}
+ %%  	\begin{itemize}\itemsep \isep
+ %%  	\item Porting of Linux, Device-Tree and U-Boot.
+ %%  	\item Configured the uart interface for Sim800 module.
+ %%  	\item Partitioning of SPI-NOR flash and a jffs2 partition as per requirement.
+ %%  	\item Establishes the cloud connection, to be in sync with mobile app.
+ %%  	\item Integrated SIMCOM Sim800 module for SMS, Call and GPRS with Gateway over uart interface.
+ %%  	\item Access to Cloud through GPRS and prioritized SMS/Call over GPRS.
+ %%  	\item Write API for SMS and  call for certain events like fall-detect, panic-situation, inactivity alert.
+ %%  	\item Implements fail-over mechanism, prioritized the Ethernet/Wi-Fi/GPRS interfaces for access to cloud.
+ %%  	\item Implements algorithm to sense the Cloud-connection, Switches to AP mode when cloud connection is not established then after 10 minutes resumes in Station Mode if Wi-Fi network is available.
+ %%  	\item Write API's for configuration of Wi-Fi in Access-Point or in Station Mode.
+ %%  	\item Firmware-Upgrade of Gateway through Cloud only after getting nod from Mobile-App.
+ %%  	\item Basic Functionality of Bluetooth.
+ %%  	\end{itemize}
+ %%  
+ %%  \item \textbf{Packet Prioritization} %\hfill Duration: 2 months
+ %%  \\
+ %%   \emph{Platform : Linux\hfill Build-SDK: Openwrt\\ Role : Software Developer} \\[-0.6cm]
+ %%  \\\\
+ %%  	Based on the NXP's 
+ %%          \href{http://www.nxp.com/products/reference-designs/qoriq-ls1021a-iot-gateway-reference-design:LS1021A-IoT}{\textbf{\underline{LS1021A-IOT}}}
+ %%  board. UDP Network packets sent on high priority through ethernet. Locate the UDP packets having specific destination port and mapped them to high priority queues with the support of existing eTSEC hardware.
+ %%  \\
+ %%          \emph{Responsibilities:}
+ %%          \begin{itemize}\itemsep \isep
+ %%  	\item Implemetation done in device tree and gianfar driver.
+ %%  	\item Capture the socket buffers for UDP packets, having a specific destination port at layer 4.
+ %%  	\item Mapped the socket buffers to high priority queues.
+ %%  	\item Enable the High Priority Scheduling, supported by eTSEC hardware at layer 2.
+ %%  	\item Enables the Weight Round Robin mechanism to send mapped packet at Egress port.
+ %%          \end{itemize}
+ %%  
+ %%  %\item \textbf{Monster Cam}%\hfill Duration: 2 months
+ %%  \item \href{https://youtu.be/xr9ez-oayiI}{\textbf{\underline{Multi-sensor fusion Camera}}}%\hfill Duration: 2 months
+ %%  \\
+ %%   \emph{Platform : Linux\\ Role : Software Developer} \\[-0.6cm]
+ %%  \\ \\
+ %%  	It is based on TI's TDA2xx OMAP processor. It captures data from various sensors and fuses all that data to produce a unique frame. The high end of this product is in Automotive industry for ADAS application like lane departure, rear view, collison warning. It is integrated with sensors like Radar Module, FPD link module, TOF sensor, Mems Thermal sensor, Stereo Sensor. It is also integrated with DaVinci Digita Media processor i.e DM388, for high resolution images through board to board connector. TDA2xx Processor fuses the data from sensor and DM388 processor to produce a video which is streamed on HDMI.
+ %%  %	It has two TI's processors i.e. DaVinci Digital Media and TI's Tda2xx OMAP processors. It is integrated with sensors like Radar Module, Fpd link Module, TOF sensors ,Mems Thermal Sensor are integrated with Tda2xx processor and DM388 provides the digital signal processing signals from camera. The high end of this product is automotive industry in lane departure, rear view, collison warning.
+ %%  \\
+ %%  	\emph{Responsibilities:}
+ %%  	\begin{itemize}\itemsep \isep
+ %%  	\item U-boot and Linux Kernel firmware porting for DM388 and Tda2xx
+ %%  	\item Configured SPI bus for Mems Thermal Sensor in Tda2xx.
+ %%  	\item Write the I2C slave driver for DM388 as linux kernel don’t provide support for I2C slave mode.
+ %%  	\item Modify the SPI driver for DM388 to support slave configuration.
+ %%  	\item DDR Performance with Cachebench utility.
+ %%  	\item Testing of Ethernet interface i.e.\ validation of 1 GigaBit link at linux user space with iperf and ethtool.
+ %%  	\item Testing of USB 3.0 interface at linux user space.
+ %%  	\item Nand flash: Partitionin of NAND flash.
+ %%  	\end{itemize}
+ %%  
+ %%  %\item \textbf{Cube} %\hfill Duration: 4 months
+ %%  \item \textbf{Router-cum-Media storage \& streaming device} %\hfill Duration: 4 months
+ %%  \\
+ %%   \emph{Platform : Linux\hfill Build-SDK: Yocto\\ Role : Software Developer} \\[-0.6cm]
+ %%  \\ \\
+ %%  	It is based on Freescale's i.MX 6 processor. It provides access to internet for Mobile devices and allow them to directly play the videos stored on it by the surveillance cameras on alert. It has wireless module, Hard-drive 500GB for the storage. Servers are configured so that it save the videos sent by the camera and provide access to directly play the videos on android/iOS mobile devices.
+ %%  \\
+ %%  	\emph{Responsibilities:}
+ %%  	\begin{itemize}\itemsep \isep
+ %%  	\item EMMC: It is the bootable media, require changes in u-boot to support booting from emmc.
+ %%  	\item Firmware Upgrade: Write API to upgrade the existing firmware in one click i.e user friendly way.
+ %%  	\item Fail Safe Mechanism: Mechanism to boot the board from secondary images, in case of failure in firmware upgrade.
+ %%  	\item Write back-end API to recieve parameteres from GUI and configure wi-fi in station mode.
+ %%  	\item Write API to communicate with cloud to notify users.
+ %%  	\item Write API to send the thumbnail of video's to android/iOS mobile app.
+ %%  	\item Debug and modify the application to send response mobile device, before switching to wi-fi client mode.
+ %%  	\item Write api to send the board statistics to GUI.
+ %%  	\end{itemize}
+ %%  
+
+
 \sectionsep
