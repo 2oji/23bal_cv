@@ -114,12 +114,18 @@
 %    keywords: all, odd, even or none, or by a comma-separated list of either
 %    individual page numbers or page ranges. If page-list is omitted, all assumed.
 %
-\def\LEFTCOLUMNWIDTH  {0.65\textwidth}            % 2/3 of text width
-\def\RIGHTCOLUMNWIDTH {0.32\textwidth}            % 1/3 of text width
-\def\SIDEBYSIDEGAP {0.68\textwidth}
+% textwidth = Left Width + Gap + Right width i.e. 1 = 0.32 + 0.65 + 0.03
+\def\LEFTCOLUMNWIDTH  {0.32\textwidth}            % 1/3 of text width
+\def\RIGHTCOLUMNWIDTH {0.65\textwidth}            % 2/3 of text width
+\def\COLUMNGAP {0.03\textwidth}
 
 \newcommand{\LeftColWdth}{0.66\textwidth}
 \newcommand{\RightColWdth}{0.33\textwidth}
+
+% x position for the right column: RightColStart = leftColWidth + Gap
+\newlength\rightColX
+\setlength{\rightColX}{\LEFTCOLUMNWIDTH}
+\addtolength{\rightColX}{\COLUMNGAP}
 
 % define lengths to help compute positions
 \newlength\titleH
@@ -135,12 +141,12 @@
 \newstaticframe[1]{\titleW}{\titleH}{0pt}{\titleY}[TitleCL]
 \setstaticframe{1}{valign=t}        % Page 19 flowfram.pdf, default c
 %
-%  Page 1 - Right Column - Static F2
-\newstaticframe[1]{\RIGHTCOLUMNWIDTH}{\titleY}{\SIDEBYSIDEGAP}{0pt}[RightCL]
+%  Page 1 - Left Column - Static F2
+\newstaticframe[1]{\LEFTCOLUMNWIDTH}{\titleY}{0pt}{0pt}[LeftCL]
 \setstaticframe{2}{valign=t}
 %
-%  Page 1 - Left column - Flow F 1
-\newflowframe[1]{\LEFTCOLUMNWIDTH}{\titleY}{0pt}{0pt}[LeftCL]
+%  Page 1 - Right column - Flow F 1
+\newflowframe[1]{\RIGHTCOLUMNWIDTH}{\titleY}{\rightColX}{0pt}[RightCL]
 %  Page 2 & onwards - Full page - Flow F 2
 %    Define the page layout for SUBSEQUENT pages (from page 2 onwards)
 %    This frame spans the full text width so that data will flow from left
