@@ -14,16 +14,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 
-\documentclass[a4paper]{article} % use "letterpaper" if you're in the US
+\NeedsTeXFormat{LaTeX2e}     % Sets the LaTex version of class to work
+\ProvidesClass{asb26}[2025/11/29 Two column First page and Full page onwards LaTeX class]
 
-%%%%%
+\DeclareOption*{% this lets you use options like a4paper, letterpaper, etc that are defined by the article class
+  \PassOptionsToClass{\CurrentOption}{article}
+}
+\ProcessOptions\relax
+
+\LoadClass{article}
+
+
+%%
 % Load Geometry package after \LoadClass{article} to make effect
 %
 %\usepackage[top=0.75in, bottom=0.75in, left=0.55in, right=0.85in]{geometry}
 \usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry}
-%%%%%
+%%
 
-%%%
+%%
 % Dump data for checking - \blindtext[1]
 % \blindtext = paragraph of dummy text
 % \Blindtext = multiple paragraphs (one page long) of dummy text
@@ -33,13 +42,13 @@
 %       and itemized lists.
 \usepackage{blindtext}
 \usepackage{lipsum}              % Dummy data - lipsum[2-4]
-%%%
+%%
 
-%%% Load graphics pacakge
+%% Load graphics pacakge
 \usepackage{graphicx}            %% For linkedin icons, github
 \usepackage{calc}                %% To calculate the localLocPin
 \usepackage{tabularx}
-%%%
+%%
 % all later pages the natural height of the material on that page
 % no rubber vertical lengths will be stretched
 %
@@ -47,13 +56,13 @@
 %\textheight=9.75in
 \raggedbottom
 
-%%% Symbols
+%% Symbols
 % fontawesome, marvosym, ifsym few pkgs
 %
 %
 \usepackage{fontawesome}         %% For linkedin icons, github
 
-%%%
+%%
 %
 %
 \usepackage{xcolor} % used for colouring and underline the links.
@@ -69,50 +78,16 @@
 \definecolor{ltgrey}{gray}{0.50}
 \definecolor{black}{RGB}{0, 0, 0}
 
-%%%
-%%%
-% Load Confidential data
-\input{./fonts/SelectFont.tex}
-\IfFileExists{./data/UserPvtInfo.tex}{\input{./data/UserPvtInfo.tex}}{\input{./data/UserPubInfo.tex}}
-
-\newcommand*{\localLocPin}{%
-  \includegraphics[height=\heightof{M}]{pin}%
-}
-
-\newcommand{\MainHeading}[1]{%
-    {\noindent \color{ltgrey}\normalsize{\textsc {#1}}}\vspace{6pt}\\ }
-
-\newcommand{\MainSubHeading}[2]{%
-   {\noindent \large{\textsc{\textbf{#1} #2}}}\\ }
-
-
-\newcommand{\MainSubHeadingNote}[1]{%
-   {\noindent \color{ltgrey}\small{\textit{#1}}}\\ }
-
-
-\newcommand{\RoleDescription}[1]{%           % If need, add \vspace{-4mm} at end to adjust space
-   {{\color{black}\scriptsize{#1}}} \\ }
-
-\setlength{\tabcolsep}{0in}
-\newcommand{\isep}{-2 pt}
-\newcommand{\lsep}{-0.5cm}
-\newcommand{\psep}{-0.6cm}
-\newcommand{\sectionsep}{\vspace{8pt}}
-
-% Renew command
-\renewcommand{\labelitemii}{$\circ$}
-
-
-% --- Show frame of the layout --- DEBUG
+%% --- Show frame of the layout --- DEBUG
 % Show layout paramters - \layout or \layout* after \begin{document}
 \usepackage{layout}
 % \usepackage{layouts}             % Illustrates minor details - Useful package
 
-%%% Debug
+%% --- Show frame of the layout --- DEBUG
 % Show outerframe, Uncomment this   - Debug
 \usepackage{showframe}
 
-%%%%
+%% --- [draft] show all boundaries --- DEBUG
 \usepackage[draft]{flowfram}
 %
 % draft option will draw the bounding boxes for each defined frame.
@@ -170,7 +145,7 @@
 %    column to this one.
 \newflowframe[2]{\textwidth}{\textheight}{0pt}{0pt}[full]
 
-%%%
+%% --- [draft] Colored frames --- DEBUG
 % Modify flowframe attribute
 % \setflowframe{ID-list}{key=value list}
 %   ID-list can be found with draft option
@@ -180,46 +155,3 @@
 \setflowframe{1}{label=hi, backcolor=red}
 \setflowframe{2}{backcolor=yellow}
 
-% Space before and after bullet
-\newcommand{\BAspaceBullet}{\space{\textbullet}\space}
-
-% --- Begin Document ---
-\begin{document}
-%\flowframeshowlayout
-%\layout                    % Debug
-%
-
-\begin{staticcontents}{1}
-\begin{minipage}[b]{0.66\textwidth}        % Minipage align to bottom
-%\raggedright{
-   \centering{
-
-         \UserName{} \\
-         Software Architect \BAspaceBullet Embedded developer \\
-         \BAspaceBullet Boot \BAspaceBullet Linux device driver \BAspaceBullet UFS  \\
-         Experience \UserExperience{} Years    \\
-         \faPhone{} \UserMobile{} \BAspaceBullet \space \faEnvelope{} \space \UserEmailID{}
-   } %% \centering
-\end{minipage}%
-\hfill
-%
-%   Begin Left side Minipage
-{
-   %\noindent\fbox{%
-   \begin{minipage}[b]{0.33\textwidth}        % Minipage align to bottom
-         \raggedleft{
-
-            \CurrentCompany{} \\
-               Staff Engineer  \\
-               {\Large{\localLocPin}}{} \UserLocation{}
-         }
-      \end{minipage}%
-   }
-
-\end{staticcontents}
-\begin{staticcontents*}{right}
-\input{./data/skillinfo.tex}
-\end{staticcontents*}
-\input{./data/workinfo.tex}
-
-\end{document}
