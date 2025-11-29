@@ -133,10 +133,11 @@
 \addtolength{\titleY}{-\titleH}                 % Decrease Title Height by titleH
 %  Page 1 - Title Column - Static F1
 \newstaticframe[1]{\titleW}{\titleH}{0pt}{\titleY}[title]
+\setstaticframe{1}{valign=t}        % Page 19 flowfram.pdf, default c
 %
 %  Page 1 - Right Column - Static F2
 \newstaticframe[1]{\RIGHTCOLUMNWIDTH}{\titleY}{\SIDEBYSIDEGAP}{0pt}[right]
-\setstaticframe{2}{valign=t}        % Page 19 flowfram.pdf, default c
+\setstaticframe{2}{valign=t}
 %
 %  Page 1 - Left column - Flow F 1
 \newflowframe[1]{\LEFTCOLUMNWIDTH}{\titleY}{0pt}{0pt}[left]
