@@ -18,9 +18,14 @@ pin: output data/pin.tex
 	cd output && dvipdf pin.dvi
 	cd output && dvips pin.dvi
 
+asb26: asb26.tex
+	xelatex asb26.tex
+	xelatex asb26.tex
+
 .PHONY: clean
 clean:
 	rm output/*.out output/*.aux  output/*.dvi  output/*.log
+	rm *.out *.aux  *.dvi  *.log
 
 # To remove pdf metadata use the following programs
 # https://www.pdflabs.com/docs/pdftk-cli-examples/

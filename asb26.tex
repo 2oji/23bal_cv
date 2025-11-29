@@ -1,0 +1,78 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Latex Template - Tex file
+% Compile with xelatex
+% Version 1.0
+% Shared under GPLv3
+%
+%%%%%%%%%%%%%%%%%%%%
+%
+%
+%%%%%%%%%%%%%%%%%%%%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+\documentclass[a4paper]{article} % use "letterpaper" if you're in the US
+
+%%%%%
+% Load Geometry package after \LoadClass{article} to make effect
+%
+%\usepackage[top=0.75in, bottom=0.75in, left=0.55in, right=0.85in]{geometry}
+\usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry}
+%%%%%
+
+%%%
+% Dump data for checking - \blindtext[1]
+% \blindtext = paragraph of dummy text
+% \Blindtext = multiple paragraphs (one page long) of dummy text
+% \Blinddocument = entire document, If you specify documentclass
+%      as report then \Blinddocument will generate the document
+%      with multiple chapters, sections, subsections, paragraphs,
+%       and itemized lists.
+\usepackage{blindtext}
+\usepackage{lipsum}              % Dummy data - lipsum[2-4]
+%%%
+
+%%% Debug
+% Show layout paramters - \layout or \layout* after \begin{document}
+\usepackage{layout}
+% \usepackage{layouts}             % Illustrates minor details - Useful package
+
+%%% Debug
+% Show outerframe, Uncomment this   - Debug
+\usepackage{showframe}
+
+\newcommand{\RightColWdth}{0.33\textwidth}
+
+\usepackage{flowfram}
+%%%%
+% The text of the document environment will flow from one frame to the next in
+%  order of definition.
+%
+% \newflowframe[page-list]{width}{height}{x}{y}[label]
+%  - width, height - width, height of frame
+%  - x, y - Position of the bottom left hand corner of the frame relative to the
+%    bottom left hand corner of the typeblock.
+%
+%  - page-list - optional argument, indicates the list of pages for which this
+%    frame is defined. A page list can either be specified by the
+%    keywords: all, odd, even or none, or by a comma-separated list of either
+%    individual page numbers or page ranges. If page-list is omitted, all assumed.
+%
+%  Page 1 - Left and Right layout
+%   Frame 1
+\newflowframe{0.5\textwidth}{\textheight}{0pt}{0pt}[left]
+%   Frame 2
+\newflowframe{0.5\textwidth}{\textheight}{0.5\textwidth}{0pt}[right]
+
+
+% --- Begin Document ---
+\begin{document}
+
+\lipsum[1-3]
+\framebreak
+\lipsum[4-9]
+
+\end{document}
