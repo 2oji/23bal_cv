@@ -109,7 +109,7 @@
       \item \noindent {\textbf{UFS Cache BUG per 50K iterations}}, Several UFS commands are failing like to get bootable LUN, geometry, config and unit descriptors. Each failure has different use-case. Analayzed all the failure errors where commands are successfully received at UFS device which futher processed the right response to Host controller. Here, Host observed the mismatch in command sent and received response which marks failure of all these use-cases. Issue is with cache memory where Host is reading the stale response that cause this mismatch. Flushing the cache memory resolved this issue.
       %
       %
-      \item \noindent {\textbf{Firt UFS read cmd fails after PMIC init}}, Analyzed and solved this critical bug, where UFS read is failing after PMIC initialization and reported error in PA DL layers. Adding delay and re-issue same command would have averted this issue. Furhter read operations are passing. Here, observed that ufs read cmd is passing with PON sequence and failed after that. Observed the likely events that can affect UFS so found that PMIC initialization is driving UFS voltage and strengths. Furhter found that PSI values are different from PON sequence and can crate jitters in first UFS read operation. Issue routed to PMIC team.
+      \item \noindent {\textbf{First UFS read cmd fails after PMIC init}}, Analyzed and solved this critical bug, where UFS read is failing after PMIC initialization and reported error in PA DL layers. Adding delay and re-issue same command would have averted this issue. Furhter read operations are passing. Here, observed that ufs read cmd is passing with PON sequence and failed after that. Observed the likely events that can affect UFS so found that PMIC initialization is driving UFS voltage and strengths. Furhter found that PSI values are different from PON sequence and can crate jitters in first UFS read operation. Issue routed to PMIC team.
       %
       % UEFI - remove SSU2 commands and do not put device in sleep mode + clock gating.
       % HLOS saw UFS down so it has to re-init the while PHY sequence.
@@ -134,17 +134,36 @@
 \setlength{\tabcolsep}{5pt} % Default value: 6pt i.e 0.03\textwidth = 5 pt
 \indent\begin{tabularx}{\textwidth}{p{0.30\textwidth} p{\RIGHTCOLUMNWIDTH}} % Total width = \linewidth. Mix of types.
 %    \hline
-   Worked Responsible for device driver evelopment on Ethernet, including porting and tailoring per customer needs. & \vspace{-\topsep}\vspace{2pt} \begin{myitemize}
+      Determining AUTOSAR SWS specifications for embedded interfaces required for a new microcontroller, ensuring critical timing requirements and implementation, validation of RADAR frequency band test coverage.
+         &
+        \vspace{-\topsep}\vspace{2pt} \begin{myitemize}
     % Remove any vertical spaced added by itemsep
          \footnotesize {
-    \item \noindent Integrate phy-less port \href{https://www.marvell.com/switching/link-street/}{\textbf{Marvell 88E6352 Switch}} with \href{http://www.nxp.com/products/reference-designs/qoriq-ls1021a-iot-gateway-reference-design:LS1021A-IoT}{\textbf{\underline{LS1021A-IOT}}} over PHY-less port.
-            \item \noindent High Priority scheduling for selected TCP/UDP packets with Round Robin mechanism.
-            \item \noindent Understand the complete network packet flow, layer 2 and working of Network Switch.
-            \item \noindent Experience in Ethernet driver, socket buffers i.e. skb packets to prioritize UDP packets.
-            \item \noindent Tailored device tree and gianfar linux driver.
+            \item \noindent Defining the AUTOSAR SWS specifications for
+                           \href{https://www.autosar.org/fileadmin/standards/R22-11/CP/AUTOSAR_SWS_PortDriver.pdf}{Port},
+                           \href{https://www.autosar.org/fileadmin/standards/R22-11/CP/AUTOSAR_SWS_SPIHandlerDriver.pdf}{SPI},
+                           \href{https://www.autosar.org/fileadmin/standards/R24-11/CP/AUTOSAR_CP_SWS_I2CDriver.pdf}{I2C},
+                           interfaces for new microcontroller.
+            \item \noindent Analyzed the requirement to initiated first CAN message in 50msec after POR.
+            \item \noindent Integrated the Radar chipset over I2C bus with S32R series microcontroller.
+            \item \noindent Implemented the test-cases covering full RADAR frequency band from 76 GHz to 81 GHz with variations in sweeping window.
+            \item \noindent Analyzed the generated matlab plot for the RADAR tests.
             }
          \end{myitemize}\vspace{-\topsep}%
 \end{tabularx}
+%% \indent\begin{tabularx}{\textwidth}{p{0.30\textwidth} p{\RIGHTCOLUMNWIDTH}} % Total width = \linewidth. Mix of types.
+%% %    \hline
+%%    Worked Responsible for device driver evelopment on Ethernet, including porting and tailoring per customer needs. & \vspace{-\topsep}\vspace{2pt} \begin{myitemize}
+%%     % Remove any vertical spaced added by itemsep
+%%          \footnotesize {
+%%     \item \noindent Integrate phy-less port \href{https://www.marvell.com/switching/link-street/}{\textbf{Marvell 88E6352 Switch}} with \href{http://www.nxp.com/products/reference-designs/qoriq-ls1021a-iot-gateway-reference-design:LS1021A-IoT}{\textbf{\underline{LS1021A-IOT}}} over PHY-less port.
+%%             \item \noindent High Priority scheduling for selected TCP/UDP packets with Round Robin mechanism.
+%%             \item \noindent Understand the complete network packet flow, layer 2 and working of Network Switch.
+%%             \item \noindent Experience in Ethernet driver, socket buffers i.e. skb packets to prioritize UDP packets.
+%%             \item \noindent Tailored device tree and gianfar linux driver.
+%%             }
+%%          \end{myitemize}\vspace{-\topsep}%
+%% \end{tabularx}
 \endgroup
 \sectionsep       %%% Followed per Deedy resume
 
@@ -155,20 +174,34 @@
 %
 \MainSubHeading{\CompanyIII{}}{| Technical Leader}
 \MainSubHeadingNote{\CompanyIIIexp{}}
-\RoleDescription{%
+%%  \RoleDescription{%
+%%     Gained experience on Ethernet, Wireless domain, linux kernel and system applications.
+%%  }
+%%  \vspace{-\topsep}\vspace{2pt}    % Remove any vertical spaced added by itemsep
+%%  \begin{itemize}\itemsep\isep
+%%  \footnotesize {
+%%     \item \noindent OTA upgrade - Implemented failsafe mechanism.
+%%     \item \noindent Integrated Atheros PHY with Marvell SOC \textendash{} MDIO protocol.
+%%     \item \noindent Wireless Client aborts communication in 5GHz B.W. upon RADAR detection on \\ current DFS channel and raise CAC to station - first ever design for Client.
+%%  }
+%%  \end{itemize}\vspace{-\topsep}%
+\begingroup
+\setlength{\tabcolsep}{5pt} % Default value: 6pt i.e 0.03\textwidth = 5 pt
+\indent\begin{tabularx}{\textwidth}{p{0.30\textwidth} p{\RIGHTCOLUMNWIDTH}} % Total width = \linewidth. Mix of types.
+%    \hline
+   Handles OTA firmware update and system level programming, Integrated Atheros PHY and provided software support to comply with  passing criteria.
    Gained experience on Ethernet, Wireless domain, linux kernel and system applications.
-}
-\vspace{-\topsep}\vspace{2pt}    % Remove any vertical spaced added by itemsep
-\begin{itemize}\itemsep\isep
-\footnotesize {
-   \item \noindent OTA upgrade - Implemented failsafe mechanism.
-   \item \noindent Integrated Atheros PHY with Marvell SOC \textendash{} MDIO protocol.
-   \item \noindent Wireless Client aborts communication in 5GHz B.W. upon RADAR detection on \\ current DFS channel and raise CAC to station - first ever design for Client.
-}
-\end{itemize}\vspace{-\topsep}%
+         &
+        \vspace{-\topsep}\vspace{2pt} \begin{myitemize}
+    % Remove any vertical spaced added by itemsep
+    \footnotesize {
+    \item \noindent OTA upgrade - Implemented fail-safe recovery mechanism to update the boot binaries if OTA fails for boot binaries.
+    \item \noindent Ported and Integrated Atheros PHY with Marvell SOC \textendash{} MDIO protocol in linux kernel.
+    \item \noindent Implemented use-case on the Wireless Client to aborts communication in 5GHz B.W. upon RADAR detection on current DFS channel and raise CAC to station - first ever design for Client. This use-case is required for Safety approvals at the Airport RADAR is detected frequently in 5GHz frequency range.
+    }
+   \end{myitemize}\vspace{-\topsep}%
+\end{tabularx}
 \sectionsep       %%% Followed per Deedy resume
-
-
 %
 %
 % Company
@@ -176,16 +209,31 @@
 %
 \MainSubHeading{\CompanyII{}}{| Senior Engineer}
 \MainSubHeadingNote{\CompanyIIexp{}}
-\RoleDescription{%
-   Worked in boot domain and experienced with Jenkins.
-}
-\vspace{-\topsep}\vspace{2pt}    % Remove any vertical spaced added by itemsep
-\begin{itemize}\itemsep\isep
-\footnotesize {
-   \item \noindent Automate flashing \& loading of Wi-Fi FW binary from HOST over TFTP in boot terminal.
-   \item \noindent Jenkins to automate Ethernet test-cases
-}
-\end{itemize}\vspace{-\topsep}%
+%% \RoleDescription{%
+%%    Worked in boot domain and experienced with Jenkins.
+%% }
+%% \vspace{-\topsep}\vspace{2pt}    % Remove any vertical spaced added by itemsep
+%% \begin{itemize}\itemsep\isep
+%% \footnotesize {
+%%    \item \noindent Automate flashing \& loading of Wi-Fi FW binary from HOST over TFTP in boot terminal.
+%%    \item \noindent Jenkins to automate Ethernet test-cases
+%% }
+%% \end{itemize}\vspace{-\topsep}%
+\begingroup
+\setlength{\tabcolsep}{5pt} % Default value: 6pt i.e 0.03\textwidth = 5 pt
+\indent\begin{tabularx}{\textwidth}{p{0.30\textwidth} p{\RIGHTCOLUMNWIDTH}} % Total width = \linewidth. Mix of types.
+%    \hline
+   Automate the loading of binary at boot terminal and build understanding on Jenkins across targets for nightly tests.
+         &
+        \vspace{-\topsep}\vspace{2pt} \begin{myitemize}
+    % Remove any vertical spaced added by itemsep
+    \footnotesize {
+      \item \noindent Implemented command in boot terminal, that will first initialize localhost IP configurations and loads the Wi-Fi FW binary from locahost over TFTP and start flashing at the required address.
+      \item \noindent Understand the Jenkins framework and scale the existing framework to new targets.
+    }
+   \end{myitemize}\vspace{-\topsep}%
+\end{tabularx}
+\endgroup
 \sectionsep
 
 
@@ -196,80 +244,193 @@
 %
 \MainSubHeading{\CompanyI{}}{| Senior Engineer}
 \MainSubHeadingNote{\CompanyIexp{}}
-\RoleDescription{%
-Responsible for Board Bring up activities, porting, linux device driver, u-boot, Linux kernel, device-tree and system level programming for various targets like TI OMAP, TI TDA2XX, TI DaVinci(DM388), Freescale i.MX 6, Qualcomm IPQ4028 \& IPQ4029 processsors.\newline
-Worked on embedded protocols like I2C, SPI, Ethernet, MDIO, Wireless, Bluetooth, DDR and integrating memories i.e. NAND, eMMC with HOST controllers.\newline
-Written applications in C for use-cases for Wireless demons like hostapd, udhcpc, udhcpd, wap\_supplicant, wpa\_supplicant. \newline
-Implemented IPC's, Multi Thread programming, Socket Programming.
-}
-\vspace{-\topsep}\vspace{2pt}    % Remove any vertical spaced added by itemsep
-\begin{itemize}\itemsep\isep
-\footnotesize {
-   \item \noindent Board Bring UP of multiple targets like TI's DM388, TDA2xx and Freescale i.MX6 series.
-   \item \noindent Linux device driver to configure HOST DM388 in slave mode over I2C \& SPI bus.
-   \item \noindent Porting of u-boot, linux kernel, device-tree \& System level programming.
-   \item \noindent Developed Applications for hostapd \& wpa supplicant to configure Wi-Fi targets. 
-}
-\end{itemize}\vspace{-\topsep}%
-\vspace{4pt}
-\footnotesize {
-\hspace{0.25cm}{\textbf{Marvell Gigabit Ethernet Switch Integration}}\newline
-   Integrate the i.MX6 sololite \& TI's DM8168 processor with \href{https://www.marvell.com/switching/link-street/}{\textbf{Marvell 88E6352 switch}} having 7 ports, 1 SERDES and 5 PHY's with gigabit ethernet support. Marvell switch intergarted with processor directly with PHY less PORT. i.MX6 sololite configured in RMII configuration and DM8168 configured GMII mode. \newline
-   \emph{Challenge} is to understand the Marvell switch integration with controller.
-%, learned about MDIO framework
-      \newline
-      \emph{Responsibilities:}
-      \begin{itemize}\itemsep \isep
-         \item Understands controller engagement with switch over phy-less port i.e PORT 6 of switch.
-         \item At u-boot, PHY support is added and configure the processor in RMII mode for i.MX6.
-         \item Resolved the ping bug, by adding delay at phy side.
-         \item In linux, ethernet driver is modified to keep the link permanently up.
-      \end{itemize}
-}
-
-
-\hspace{0.25cm}\href{https://www.qualcomm.com/products/ipq4028}{\textbf{Wireless AP-CPE }}%\hfill Duration: 2 months
-   %\item {\textbf{Wireless AP-CPE}}%\hfill Duration: 5 months
-%    \emph{Platform : Linux\hfill Build-SDK: openwrt\\ Role : Software Developer} \\[-0.6cm]
-   % \makebox[\linewidth][s]{\emph{CPE establish Ethernet 1Gig connection with i.MX 6 based board and sends it's data to AP board over wireless 5Gig channel.}}
-   Based on Dakota reference board having Qualcomm IPQ4028 chipset and integrated with BLE module, SPI-Nor flash, USB-OTG, Ethernet Atheros Phy, 2x2 Wi-Fi 5G and 2G radios. Provides various applications as Access points, Home Routers and as Customer Premises Equipment i.e. CPE.
-   \newline
-	\emph{Responsibilities:}
-	\begin{itemize}\itemsep \isep
-	\item Board Bring-Up.
-	\item Porting of Linux, Device-Tree , U-Boot and Board Bring-Up activities.
-	\item Removed the support of 5 Port Phy i.e. QCA8075.
-	\item Provide support for Atheros 8033 phy in linux in u-boot and kernel.
-	\item Configured the uart interface for BLE i.e. CSR1012 module.
-	\item Bug-Fix for auto-negotiation of PHY i.e. provide support of 10/100MBps.
-	\item System level implementation to Dynamically Configured as Access Point or as CPE. % based on gpio.
-	\end{itemize}
-
-\hspace{0.25cm}{\textbf{Packet Prioritization}}\newline
-	Based on the NXP's
+%% \RoleDescription{%
+%% Responsible for Board Bring up activities, porting, linux device driver, u-boot, Linux kernel, device-tree and system level programming for various targets like TI OMAP, TI TDA2XX, TI DaVinci(DM388), Freescale i.MX 6, Qualcomm IPQ4028 \& IPQ4029 processsors.\newline
+%% Worked on embedded protocols like I2C, SPI, Ethernet, MDIO, Wireless, Bluetooth, DDR and integrating memories i.e. NAND, eMMC with HOST controllers.\newline
+%% Written applications in C for use-cases for Wireless demons like hostapd, udhcpc, udhcpd, wap\_supplicant, wpa\_supplicant. \newline
+%% Implemented IPC's, Multi Thread programming, Socket Programming.
+%% }
+%% \vspace{-\topsep}\vspace{2pt}    % Remove any vertical spaced added by itemsep
+%% \begin{itemize}\itemsep\isep
+%% \footnotesize {
+%%    \item \noindent Board Bring UP of multiple targets like TI's DM388, TDA2xx and Freescale i.MX6 series.
+%%    \item \noindent Linux device driver to configure HOST DM388 in slave mode over I2C \& SPI bus.
+%%    \item \noindent Porting of u-boot, linux kernel, device-tree \& System level programming.
+%%    \item \noindent Developed Applications for hostapd \& wpa supplicant to configure Wi-Fi targets. 
+%% }
+%% \end{itemize}\vspace{-\topsep}%
+\begingroup
+\setlength{\tabcolsep}{5pt} % Default value: 6pt i.e 0.03\textwidth = 5 pt
+\indent\begin{tabularx}{\textwidth}{p{0.30\textwidth} p{\RIGHTCOLUMNWIDTH}} % Total width = \linewidth. Mix of types.
+%    \hline
+ Responsible for the whole embedded system, from understanding customer requirements, developing feature, resolving bugs/issues and end-to-end validations.
+ Resolved numerous complex issues while porting and in the bring-up phase in u-boot, linux kernel and system level applications.
+         &
+        \vspace{-\topsep}\vspace{2pt} \begin{myitemize}
+    % Remove any vertical spaced added by itemsep
+    \footnotesize {
+          \item \noindent Board Bring UP of multiple targets like TI's DM388, Qualcomm, TDA2xx and Freescale i.MX6 series.
+          \item \noindent Porting of u-boot, linux kernel, device-tree \& System level applications.
+          \item \noindent Implemented IPC's, Multi thread and Socket Programming.
+          \item \noindent Written applications for hostapd, udhcpc, wpa\_supplicant, nodejs, boa server to meet use-cases.
+          \item \noindent Linux device driver to configure HOST DM388 in slave mode over I2C \& SPI bus.
+          \item \noindent Experienced with Embedded protocols like I2C, SPI, Ethernet, MDIO, Router, Bluetooth, DDR and integrating memories i.e. NAND, eMMC with Host controller.
+    }
+   \end{myitemize}\vspace{-\topsep}%
+\end{tabularx}
+\endgroup
+%%  \vspace{4pt}
+%%  \footnotesize {
+%%  \hspace{0.25cm}{\textbf{Marvell Gigabit Ethernet Switch Integration}}\newline
+%%     Integrate the i.MX6 sololite \& TI's DM8168 processor with \href{https://www.marvell.com/switching/link-street/}{\textbf{Marvell 88E6352 switch}} having 7 ports, 1 SERDES and 5 PHY's with gigabit ethernet support. Marvell switch intergarted with processor directly with PHY less PORT. i.MX6 sololite configured in RMII configuration and DM8168 configured GMII mode. \newline
+%%     \emph{Challenge} is to understand the Marvell switch integration with controller.
+%%  %, learned about MDIO framework
+%%        \newline
+%%        \emph{Responsibilities:}
+%%        \begin{itemize}\itemsep \isep
+%%           \item Understands controller engagement with switch over phy-less port i.e PORT 6 of switch.
+%%           \item At u-boot, PHY support is added and configure the processor in RMII mode for i.MX6.
+%%           \item Resolved the ping bug, by adding delay at phy side.
+%%           \item In linux, ethernet driver is modified to keep the link permanently up.
+%%        \end{itemize}
+%%  }
+\begingroup
+\setlength{\tabcolsep}{5pt} % Default value: 6pt i.e 0.03\textwidth = 5 pt
+\indent\begin{tabularx}{\textwidth}{p{0.30\textwidth} p{\RIGHTCOLUMNWIDTH}} % Total width = \linewidth. Mix of types.
+%    \hline
+    {\textbf{Marvell Gigabit Ethernet Switch Integration}} & \emph{Responsibilities} \\%%
+    Integrate the i.MX6 sololite \& TI's DM8168 processor with \href{https://www.marvell.com/switching/link-street/}{\textbf{Marvell 88E6352 switch}} having 7 ports, 1 SERDES and 5 PHY's with gigabit ethernet support. Marvell switch intergarted with processor directly with PHY less PORT. i.MX6 sololite configured in RMII configuration and DM8168 configured GMII mode.  &
+        \vspace{-\topsep}\vspace{2pt} \begin{myitemize}
+    % Remove any vertical spaced added by itemsep
+    \footnotesize {
+         \item Understands MDIO protocol to engage with Marvell Switch as need to integrate PHY less port of switch.
+         \item Configure the Marvell switch to use phy less port, read its device id.
+         \item Implemented Switch driver at u-boot and added necessary PHY support to configure the processor in RMII mode for i.MX6.
+         \item Resolved the ping issue by adding delay for the rx line on the host side of PHY configurations.
+         \item Modified the linux ethernet driver to disable AUTO PHY negotiations to keep link always up for 1000 Gbps
+    }
+   \end{myitemize}\vspace{-\topsep}%
+\end{tabularx}
+\endgroup
+%
+%
+%
+%
+%% \hspace{0.25cm}\href{https://www.qualcomm.com/products/ipq4028}{\textbf{Wireless AP-CPE }}%\hfill Duration: 2 months
+%%    %\item {\textbf{Wireless AP-CPE}}%\hfill Duration: 5 months
+%% %    \emph{Platform : Linux\hfill Build-SDK: openwrt\\ Role : Software Developer} \\[-0.6cm]
+%%    % \makebox[\linewidth][s]{\emph{CPE establish Ethernet 1Gig connection with i.MX 6 based board and sends it's data to AP board over wireless 5Gig channel.}}
+%%    Based on Dakota reference board having Qualcomm IPQ4028 chipset and integrated with BLE module, SPI-Nor flash, USB-OTG, Ethernet Atheros Phy, 2x2 Wi-Fi 5G and 2G radios. Provides various applications as Access points, Home Routers and as Customer Premises Equipment i.e. CPE.
+%%    \newline
+%% 	\emph{Responsibilities:}
+%% 	\begin{itemize}\itemsep \isep
+%% 	\item Board Bring-Up.
+%% 	\item Porting of Linux, Device-Tree , U-Boot and Board Bring-Up activities.
+%% 	\item Removed the support of 5 Port Phy i.e. QCA8075.
+%% 	\item Provide support for Atheros 8033 phy in linux in u-boot and kernel.
+%% 	\item Configured the uart interface for BLE i.e. CSR1012 module.
+%% 	\item Bug-Fix for auto-negotiation of PHY i.e. provide support of 10/100MBps.
+%% 	\item System level implementation to Dynamically Configured as Access Point or as CPE. % based on gpio.
+%% 	\end{itemize}
+\begingroup
+\setlength{\tabcolsep}{5pt} % Default value: 6pt i.e 0.03\textwidth = 5 pt
+\indent\begin{tabularx}{\textwidth}{p{0.30\textwidth} p{\RIGHTCOLUMNWIDTH}} % Total width = \linewidth. Mix of types.
+%    \hline
+    \href{https://www.qualcomm.com/products/ipq4028}{\textbf{Wireless AP-CPE }} & \emph{Responsibilities} \\%%
+    Based on Dakota reference board having Qualcomm IPQ4028 chipset and integrated with BLE module, SPI-Nor flash, USB-OTG, Ethernet Atheros Phy, 2x2 Wi-Fi 5G and 2G radios. Provides various applications as Access points, Home Routers and as Customer Premises Equipment i.e. CPE.
+         &
+        \vspace{-\topsep}\vspace{2pt} \begin{myitemize}
+    % Remove any vertical spaced added by itemsep
+    \footnotesize {
+       \item Board Bring-Up.
+	    \item Porting of Linux, Device-Tree , U-Boot and Board Bring-Up activities.
+       \item Removed the support of 5 Port Phy i.e. QCA8075.
+	    \item Provide support for Atheros 8033 phy in linux in u-boot and kernel.
+	    \item Configured the uart interface for BLE i.e. CSR1012 module.
+	    \item Bug-Fix for auto-negotiation of PHY i.e. provide support of 10/100MBps.
+	    \item System level implementation to Dynamically Configured as Access Point or as CPE. % based on gpio.
+    }
+   \end{myitemize}\vspace{-\topsep}%
+\end{tabularx}
+\endgroup
+%
+%
+%
+%%
+%%
+%% \hspace{0.25cm}{\textbf{Packet Prioritization}}\newline
+%% 	Based on the NXP's
+%%         \href{http://www.nxp.com/products/reference-designs/qoriq-ls1021a-iot-gateway-reference-design:LS1021A-IoT}{\textbf{\underline{LS1021A-IOT}}}
+%% board. UDP Network packets sent on high priority through ethernet. Locate the UDP packets having specific destination port and mapped them to high priority queues with the support of existing eTSEC hardware.
+%%         \newline
+%%         \emph{Responsibilities:}
+%%         \begin{itemize}\itemsep \isep
+%%             \item Implemetation done in device tree and gianfar driver.
+%%             \item Capture the socket buffers for UDP packets, having a specific destination port at layer 4.
+%%             \item Mapped the socket buffers to high priority queues.
+%%             \item Enable the High Priority Scheduling, supported by eTSEC hardware at layer 2.
+%%             \item Enables the Weight Round Robin mechanism to send mapped packet at Egress port.
+%%         \end{itemize}
+%%
+%%
+\begingroup
+\setlength{\tabcolsep}{5pt} % Default value: 6pt i.e 0.03\textwidth = 5 pt
+\indent\begin{tabularx}{\textwidth}{p{0.30\textwidth} p{\RIGHTCOLUMNWIDTH}} % Total width = \linewidth. Mix of types.
+%    \hline
+    \textbf{Packet Prioritization} & \emph{Responsibilities} \\%%
         \href{http://www.nxp.com/products/reference-designs/qoriq-ls1021a-iot-gateway-reference-design:LS1021A-IoT}{\textbf{\underline{LS1021A-IOT}}}
-board. UDP Network packets sent on high priority through ethernet. Locate the UDP packets having specific destination port and mapped them to high priority queues with the support of existing eTSEC hardware.
-        \newline
-        \emph{Responsibilities:}
-        \begin{itemize}\itemsep \isep
-            \item Implemetation done in device tree and gianfar driver.
-            \item Capture the socket buffers for UDP packets, having a specific destination port at layer 4.
-            \item Mapped the socket buffers to high priority queues.
-            \item Enable the High Priority Scheduling, supported by eTSEC hardware at layer 2.
-            \item Enables the Weight Round Robin mechanism to send mapped packet at Egress port.
-        \end{itemize}
-
-\hspace{0.25cm}{\href{https://youtu.be/xr9ez-oayiI}{\textbf{ADAS Multi-sensor fusion Camera}}}\newline
- 	Based on TI's TDA2xx OMAP processor to captures data from various sensors and fuses all that data to produce a unique frame for Automotive industry for ADAS applications. It is also integrated with DaVinci Digita Media processor i.e DM388, for high resolution images through board to board connector. TDA2xx Processor fuses the data from sensor and DM388 processor to produce a video which is streamed on HDMI.
-        \newline
-        \emph{Responsibilities:}
-        \begin{itemize}\itemsep \isep
-        \item U-boot and Linux Kernel firmware porting for DM388 and Tda2xx
-        \item Configured SPI bus for Mems Thermal Sensor in Tda2xx.
-        \item Write the I2C slave driver for DM388 as linux kernel don’t provide support for I2C slave mode.
-        \item Modify the SPI driver for DM388 to support slave configuration.
-        \item DDR Performance with Cachebench utility.
-        \item Testing of Ethernet interface i.e.\ validation of 1 GigaBit link at linux user space with iperf and ethtool.
-        \item Testing of USB 3.0 interface at linux user space.
-        \item Nand flash: Partitionin of NAND flash.
-        \end{itemize}
+          board. UDP Network packets sent on high priority through ethernet. Locate the UDP packets having specific destination port and mapped them to high priority queues with the support of existing eTSEC hardware.
+         &
+        \vspace{-\topsep}\vspace{2pt} \begin{myitemize}
+    % Remove any vertical spaced added by itemsep
+    \footnotesize {
+             \item Implemetation done in device tree and gianfar driver.
+             \item Capture the socket buffers for UDP packets, having a specific destination port at layer 4.
+             \item Mapped the socket buffers to high priority queues.
+             \item Enable the High Priority Scheduling, supported by eTSEC hardware at layer 2.
+             \item Enables the Weight Round Robin mechanism to send mapped packet at Egress port.
+    }
+   \end{myitemize}\vspace{-\topsep}%
+\end{tabularx}
+\endgroup
+%
+%
+%
+%% \hspace{0.25cm}{\href{https://youtu.be/xr9ez-oayiI}{\textbf{ADAS Multi-sensor fusion Camera}}}\newline
+%%  	Based on TI's TDA2xx OMAP processor to captures data from various sensors and fuses all that data to produce a unique frame for Automotive industry for ADAS applications. It is also integrated with DaVinci Digita Media processor i.e DM388, for high resolution images through board to board connector. TDA2xx Processor fuses the data from sensor and DM388 processor to produce a video which is streamed on HDMI.
+%%         \newline
+%%         \emph{Responsibilities:}
+%%         \begin{itemize}\itemsep \isep
+%%         \item U-boot and Linux Kernel firmware porting for DM388 and Tda2xx
+%%         \item Configured SPI bus for Mems Thermal Sensor in Tda2xx.
+%%         \item Write the I2C slave driver for DM388 as linux kernel don’t provide support for I2C slave mode.
+%%         \item Modify the SPI driver for DM388 to support slave configuration.
+%%         \item DDR Performance with Cachebench utility.
+%%         \item Testing of Ethernet interface i.e.\ validation of 1 GigaBit link at linux user space with iperf and ethtool.
+%%         \item Testing of USB 3.0 interface at linux user space.
+%%         \item Nand flash: Partitionin of NAND flash.
+%%         \end{itemize}
+%% \vspace{-\topsep}\vspace{2pt}    % Remove any vertical spaced added by itemsep
+% One option is to use the commands \setlength and \arraystretch to change the horizontal spacing (column separation) and the vertical spacing (row separation) respectively; for example:
+\begingroup
+\setlength{\tabcolsep}{5pt} % Default value: 6pt i.e 0.03\textwidth = 5 pt
+\indent\begin{tabularx}{\textwidth}{p{0.30\textwidth} p{\RIGHTCOLUMNWIDTH}} % Total width = \linewidth. Mix of types.
+%    \hline
+    \textbf{ADAS Multi-Sensor Fusion Camera} & \emph{Responsibilities} \\%%
+	Based on TI's TDA2xx OMAP processor to captures data from various sensors and fuses all that data to produce a unique frame for Automotive industry for ADAS applications. It is also integrated with DaVinci Digita Media processor i.e DM388, for high resolution images through board to board connector. TDA2xx Processor fuses the data from sensor and DM388 processor to produce a video which is streamed on HDMI.
+         &
+        \vspace{-\topsep}\vspace{2pt} \begin{myitemize}
+    % Remove any vertical spaced added by itemsep
+    \footnotesize {
+          \item U-boot and Linux Kernel firmware porting for DM388 and Tda2xx
+          \item Configured SPI bus for Mems Thermal Sensor in Tda2xx.
+          \item Write the I2C slave driver for DM388 as linux kernel don’t provide support for I2C slave mode.
+          \item Modify the SPI driver for DM388 to support slave configuration.
+          \item DDR Performance with Cachebench utility.
+          \item Testing of Ethernet interface i.e.\ validation of 1 GigaBit link at linux user space with iperf and ethtool.
+          \item Testing of USB 3.0 interface at linux user space.
+          \item Nand flash: Partitionin of NAND flash.
+    }
+   \end{myitemize}\vspace{-\topsep}%
+\end{tabularx}
+\endgroup
