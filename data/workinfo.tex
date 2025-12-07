@@ -126,19 +126,23 @@
 \thispagestyle{plain}
 \MainSubHeading{\CompanyIV{}}{| Technical Leader}
 \MainSubHeadingNote{\CompanyIVexp{}}
-\RoleDescription{%
-   Responsible for device driver evelopment on Ethernet, including porting and tailoring per customer needs. %
-}
+
+%%\hspace{0.25cm}\begin{tabularx}{\textwidth}{>{\hsize=0.67\hsize}X >{\hsize=1.3\hsize}X} % Total width = \linewidth. Mix of types.
 \vspace{-\topsep}\vspace{2pt}    % Remove any vertical spaced added by itemsep
-\begin{itemize}\itemsep\isep
-\footnotesize {
-   \item \noindent Integrate phy-less port \href{https://www.marvell.com/switching/link-street/}{\textbf{Marvell 88E6352 Switch}} with \href{http://www.nxp.com/products/reference-designs/qoriq-ls1021a-iot-gateway-reference-design:LS1021A-IoT}{\textbf{\underline{LS1021A-IOT}}} over PHY-less port.
-   \item \noindent High Priority scheduling for selected TCP/UDP packets with Round Robin mechanism.
-   \item \noindent Understand the complete network packet flow, layer 2 and working of Network Switch.
-   \item \noindent Experience in Ethernet driver, socket buffers i.e. skb packets to prioritize UDP packets.
-   \item \noindent Tailored device tree and gianfar linux driver.
-}
-\end{itemize}\vspace{-\topsep}%
+% One option is to use the commands \setlength and \arraystretch to change the horizontal spacing (column separation) and the vertical spacing (row separation) respectively; for example:
+\indent\begin{tabularx}{\textwidth}{p{0.30\textwidth} p{\RIGHTCOLUMNWIDTH}} % Total width = \linewidth. Mix of types.
+%    \hline
+   Worked Responsible for device driver evelopment on Ethernet, including porting and tailoring per customer needs. & \vspace{-\topsep}\vspace{2pt} \begin{myitemize}
+    % Remove any vertical spaced added by itemsep
+         \footnotesize {
+    \item \noindent Integrate phy-less port \href{https://www.marvell.com/switching/link-street/}{\textbf{Marvell 88E6352 Switch}} with \href{http://www.nxp.com/products/reference-designs/qoriq-ls1021a-iot-gateway-reference-design:LS1021A-IoT}{\textbf{\underline{LS1021A-IOT}}} over PHY-less port.
+            \item \noindent High Priority scheduling for selected TCP/UDP packets with Round Robin mechanism.
+            \item \noindent Understand the complete network packet flow, layer 2 and working of Network Switch.
+            \item \noindent Experience in Ethernet driver, socket buffers i.e. skb packets to prioritize UDP packets.
+            \item \noindent Tailored device tree and gianfar linux driver.
+            }
+         \end{myitemize}\vspace{-\topsep}%
+\end{tabularx}
 \sectionsep       %%% Followed per Deedy resume
 
 %
@@ -266,132 +270,3 @@ board. UDP Network packets sent on high priority through ethernet. Locate the UD
         \item Testing of USB 3.0 interface at linux user space.
         \item Nand flash: Partitionin of NAND flash.
         \end{itemize}
- 
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-
- %%  \item \href{https://www.qualcomm.com/products/ipq4028}{\textbf{\underline{Wireless AP-CPE}}}%\hfill Duration: 2 months
- %%  %\item {\textbf{Wireless AP-CPE}}%\hfill Duration: 5 months
- %%  \\
- %%   \emph{Platform : Linux\hfill Build-SDK: openwrt\\ Role : Software Developer} \\[-0.6cm]
- %%  \\ \\
- %%  % \makebox[\linewidth][s]{\emph{CPE establish Ethernet 1Gig connection with i.MX 6 based board and sends it's data to AP board over wireless 5Gig channel.}}
- %%  Based on Dakota reference board having Qualcomm Internet Processor IPQ4028 chipset and integrated with BLE module, SPI-Nor flash, USB-OTG, Ethernet Atheros Phy, 2x2 Wi-Fi 5G and 2G radios. Provides various applications as Access points, Home Routers and as Customer Premises Equipment i.e. CPE.
- %%  \\
- %%  	\emph{Responsibilities:}
- %%  	\begin{itemize}\itemsep \isep
- %%  	\item Board Bring-Up.
- %%  	\item Porting of Linux, Device-Tree and U-Boot.
- %%  	\item Ported for different processor chipset i.e. Internet Processor Chipset changed to IPQ4028.
- %%  	\item Removed the support of 5 Port Phy i.e. QCA8075.
- %%  	\item Provide support for Atheros 8033 phy in linux.
- %%  	\item Configured the uart interface for BLE i.e. CSR1012 module.
- %%  	\item Resolved the bug for auto-negotiation of PHY i.e. provide support of 10/100MBps.
- %%  	\item Dynamically Configured as Access Point or as CPE based on gpio.
- %%  	\end{itemize}
- %%  
- %%  \item {\textbf{Smart Secure Home Automation Gateway}}%\hfill Duration: 5 months
- %%  \\
- %%   \emph{Platform : Linux\hfill Build-SDK: Yocto\\ Role : Software Developer} \\[-0.6cm]
- %%  \\ \\
- %%   \makebox[\linewidth][s]{\emph{Automate the entire home for certain events, smarter way to care the dear ones and be in-touch in busy bee life.}}
- %%  Based on Yocto's Freescale i.MX 6 processor and Zigbee CC2538, integrated with Spi-Nor flash, Sd-card, USB-OTG, Ethernet, Wi-Fi, Zig-bee, Bluetooth and SIMCOM Sim800 module. Call and Send SMS on certain events like fall-detect, inactivity alert, panic-situation  from zigbee devices. Send infomation to mobile app through cloud access. Automates the entire home with Smart-Plug through cloud/Wi-Fi from Mobile App. Access to Cloud in a smarter way through Ethernet/Wi-Fi/Sim800 modules. Firmware Upgrade through Mobile App.
- %%  \\
- %%  	\emph{Responsibilities:}
- %%  	\begin{itemize}\itemsep \isep
- %%  	\item Porting of Linux, Device-Tree and U-Boot.
- %%  	\item Configured the uart interface for Sim800 module.
- %%  	\item Partitioning of SPI-NOR flash and a jffs2 partition as per requirement.
- %%  	\item Establishes the cloud connection, to be in sync with mobile app.
- %%  	\item Integrated SIMCOM Sim800 module for SMS, Call and GPRS with Gateway over uart interface.
- %%  	\item Access to Cloud through GPRS and prioritized SMS/Call over GPRS.
- %%  	\item Write API for SMS and  call for certain events like fall-detect, panic-situation, inactivity alert.
- %%  	\item Implements fail-over mechanism, prioritized the Ethernet/Wi-Fi/GPRS interfaces for access to cloud.
- %%  	\item Implements algorithm to sense the Cloud-connection, Switches to AP mode when cloud connection is not established then after 10 minutes resumes in Station Mode if Wi-Fi network is available.
- %%  	\item Write API's for configuration of Wi-Fi in Access-Point or in Station Mode.
- %%  	\item Firmware-Upgrade of Gateway through Cloud only after getting nod from Mobile-App.
- %%  	\item Basic Functionality of Bluetooth.
- %%  	\end{itemize}
- %%  
- %%  \item \textbf{Packet Prioritization} %\hfill Duration: 2 months
- %%  \\
- %%   \emph{Platform : Linux\hfill Build-SDK: Openwrt\\ Role : Software Developer} \\[-0.6cm]
- %%  \\\\
- %%  	Based on the NXP's 
- %%          \href{http://www.nxp.com/products/reference-designs/qoriq-ls1021a-iot-gateway-reference-design:LS1021A-IoT}{\textbf{\underline{LS1021A-IOT}}}
- %%  board. UDP Network packets sent on high priority through ethernet. Locate the UDP packets having specific destination port and mapped them to high priority queues with the support of existing eTSEC hardware.
- %%  \\
- %%          \emph{Responsibilities:}
- %%          \begin{itemize}\itemsep \isep
- %%  	\item Implemetation done in device tree and gianfar driver.
- %%  	\item Capture the socket buffers for UDP packets, having a specific destination port at layer 4.
- %%  	\item Mapped the socket buffers to high priority queues.
- %%  	\item Enable the High Priority Scheduling, supported by eTSEC hardware at layer 2.
- %%  	\item Enables the Weight Round Robin mechanism to send mapped packet at Egress port.
- %%          \end{itemize}
- %%  
- %%  %\item \textbf{Monster Cam}%\hfill Duration: 2 months
- %%  \item \href{https://youtu.be/xr9ez-oayiI}{\textbf{\underline{Multi-sensor fusion Camera}}}%\hfill Duration: 2 months
- %%  \\
- %%   \emph{Platform : Linux\\ Role : Software Developer} \\[-0.6cm]
- %%  \\ \\
- %%  	It is based on TI's TDA2xx OMAP processor. It captures data from various sensors and fuses all that data to produce a unique frame. The high end of this product is in Automotive industry for ADAS application like lane departure, rear view, collison warning. It is integrated with sensors like Radar Module, FPD link module, TOF sensor, Mems Thermal sensor, Stereo Sensor. It is also integrated with DaVinci Digita Media processor i.e DM388, for high resolution images through board to board connector. TDA2xx Processor fuses the data from sensor and DM388 processor to produce a video which is streamed on HDMI.
- %%  %	It has two TI's processors i.e. DaVinci Digital Media and TI's Tda2xx OMAP processors. It is integrated with sensors like Radar Module, Fpd link Module, TOF sensors ,Mems Thermal Sensor are integrated with Tda2xx processor and DM388 provides the digital signal processing signals from camera. The high end of this product is automotive industry in lane departure, rear view, collison warning.
- %%  \\
- %%  	\emph{Responsibilities:}
- %%  	\begin{itemize}\itemsep \isep
- %%  	\item U-boot and Linux Kernel firmware porting for DM388 and Tda2xx
- %%  	\item Configured SPI bus for Mems Thermal Sensor in Tda2xx.
- %%  	\item Write the I2C slave driver for DM388 as linux kernel don’t provide support for I2C slave mode.
- %%  	\item Modify the SPI driver for DM388 to support slave configuration.
- %%  	\item DDR Performance with Cachebench utility.
- %%  	\item Testing of Ethernet interface i.e.\ validation of 1 GigaBit link at linux user space with iperf and ethtool.
- %%  	\item Testing of USB 3.0 interface at linux user space.
- %%  	\item Nand flash: Partitionin of NAND flash.
- %%  	\end{itemize}
- %%  
- %%  %\item \textbf{Cube} %\hfill Duration: 4 months
- %%  \item \textbf{Router-cum-Media storage \& streaming device} %\hfill Duration: 4 months
- %%  \\
- %%   \emph{Platform : Linux\hfill Build-SDK: Yocto\\ Role : Software Developer} \\[-0.6cm]
- %%  \\ \\
- %%  	It is based on Freescale's i.MX 6 processor. It provides access to internet for Mobile devices and allow them to directly play the videos stored on it by the surveillance cameras on alert. It has wireless module, Hard-drive 500GB for the storage. Servers are configured so that it save the videos sent by the camera and provide access to directly play the videos on android/iOS mobile devices.
- %%  \\
- %%  	\emph{Responsibilities:}
- %%  	\begin{itemize}\itemsep \isep
- %%  	\item EMMC: It is the bootable media, require changes in u-boot to support booting from emmc.
- %%  	\item Firmware Upgrade: Write API to upgrade the existing firmware in one click i.e user friendly way.
- %%  	\item Fail Safe Mechanism: Mechanism to boot the board from secondary images, in case of failure in firmware upgrade.
- %%  	\item Write back-end API to recieve parameteres from GUI and configure wi-fi in station mode.
- %%  	\item Write API to communicate with cloud to notify users.
- %%  	\item Write API to send the thumbnail of video's to android/iOS mobile app.
- %%  	\item Debug and modify the application to send response mobile device, before switching to wi-fi client mode.
- %%  	\item Write api to send the board statistics to GUI.
- %%  	\end{itemize}
- %%  
-
-
-\sectionsep

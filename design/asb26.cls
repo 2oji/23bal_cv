@@ -46,8 +46,10 @@
 
 %% Load graphics pacakge
 \usepackage{graphicx}            %% For linkedin icons, github
-\usepackage{calc}                %% To calculate the localLocPin
-\usepackage{tabularx}
+\usepackage{calc}                %% For calculations
+\usepackage{enumitem}
+\usepackage[debugshow]{tabularx}
+
 %%
 % all later pages the natural height of the material on that page
 % no rubber vertical lengths will be stretched
