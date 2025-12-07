@@ -109,13 +109,15 @@
       \item \noindent {\textbf{UFS Cache BUG per 50K iterations}}, Several UFS commands are failing like to get bootable LUN, geometry, config and unit descriptors. Each failure has different use-case. Analayzed all the failure errors where commands are successfully received at UFS device which futher processed the right response to Host controller. Here, Host observed the mismatch in command sent and received response which marks failure of all these use-cases. Issue is with cache memory where Host is reading the stale response that cause this mismatch. Flushing the cache memory resolved this issue.
       %
       %
-      \item \noindent {\textbf{First UFS read cmd fails after PMIC init}}, Analyzed and solved this critical bug, where UFS read is failing after PMIC initialization and reported error in PA DL layers. Adding delay and re-issue same command would have averted this issue. Furhter read operations are passing. Here, observed that ufs read cmd is passing with PON sequence and failed after that. Observed the likely events that can affect UFS so found that PMIC initialization is driving UFS voltage and strengths. Furhter found that PSI values are different from PON sequence and can crate jitters in first UFS read operation. Issue routed to PMIC team.
+      \item \noindent {\textbf{First UFS read cmd fails after PMIC init}}, Analyzed and solved this critical bug, where UFS read is failing after PMIC initialization and reported error in PA DL layers. Adding delay and re-issue same command would have averted this issue. Furhter read operations are passing. Here, observed that ufs read cmd is passing with PON
+\framebreak
       %
       % UEFI - remove SSU2 commands and do not put device in sleep mode + clock gating.
       % HLOS saw UFS down so it has to re-init the while PHY sequence.
       % \item \noindent Re-designed the UFS driver in UEFI, GearVM and in HLOS to improve the boot time by 90msec. Here, UEFI has to skip issuing hibernate command as part of exit boot services and HLOS has to skip the PHY initialization sequence as UFS device is in active state. So, HLOS has to do partial initialization to initialize its stack which requires support from GearVM for individual apis for voltage, clock, reset and PHY configurations.
 }
 \end{itemize}\vspace{-\topsep}%
+sequence and failed after that. Observed the likely events that can affect UFS so found that PMIC initialization is driving UFS voltage and strengths. Furhter found that PSI values are different from PON sequence and can crate jitters in first UFS read operation. Issue routed to PMIC team.
 \sectionsep
 
 %
