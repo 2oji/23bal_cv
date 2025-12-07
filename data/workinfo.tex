@@ -130,6 +130,7 @@
 %%\hspace{0.25cm}\begin{tabularx}{\textwidth}{>{\hsize=0.67\hsize}X >{\hsize=1.3\hsize}X} % Total width = \linewidth. Mix of types.
 \vspace{-\topsep}\vspace{2pt}    % Remove any vertical spaced added by itemsep
 % One option is to use the commands \setlength and \arraystretch to change the horizontal spacing (column separation) and the vertical spacing (row separation) respectively; for example:
+\begingroup
 \setlength{\tabcolsep}{5pt} % Default value: 6pt i.e 0.03\textwidth = 5 pt
 \indent\begin{tabularx}{\textwidth}{p{0.30\textwidth} p{\RIGHTCOLUMNWIDTH}} % Total width = \linewidth. Mix of types.
 %    \hline
@@ -144,6 +145,7 @@
             }
          \end{myitemize}\vspace{-\topsep}%
 \end{tabularx}
+\endgroup
 \sectionsep       %%% Followed per Deedy resume
 
 %
