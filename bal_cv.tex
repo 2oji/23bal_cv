@@ -8,7 +8,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 
-\documentclass[a4paper]{./design/chirri} % use "letterpaper" if you're in the US
+\documentclass[a4paper]{./design/asb26} % use "letterpaper" if you're in the US
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \pagestyle{empty}
@@ -60,33 +60,67 @@
 % Space before and after bullet
 \newcommand{\BAspaceBullet}{\space{\textbullet}\space}
 
-%%%%%%%%%%%%%%%%%%%%%%%%
+% --- Define the new itemize environment ---
+% 1. Declare a new list type called 'myzeromarginitemize' based on 'itemize'
+\newenvironment{myitemize}{%
+  \begin{itemize}[nosep, topsep=0pt]
+    \setlength{\rightmargin}{0pt}%
+}{%
+  \end{itemize}
+}
+%%% \newlist{myzeromarginitemize}{itemize}{10}
+%%%
+%%% % 2. Set its properties
+%%% \setlist[myzeromarginitemize]{
+%%%     rightmargin=0pt,       % This is the key setting you asked for
+%%%     leftmargin=*,          % Aligns with the current text margin
+%%%     itemsep=0pt,           % No extra space between items
+%%%     parsep=0pt,            % No extra space between paragraphs within an item
+%%%     topsep=0pt,            % No extra space before the first item
+%%%     partopsep=0pt,         % No extra space from preceding paragraph
+%%%     label=\textbullet,     % Use a standard bullet as the item label
+%%%     before=\vspace{-0.5em},% Optional: reduce space before the list
+%%%     after=\vspace{-0.5em}  % Optional: reduce space after the list
+%%% }
+
+
+% --- Begin Document ---
 \begin{document}
+%\flowframeshowlayout
 %\layout                    % Debug
+%
 
-%
-%\begin{headingbox}[skin=bicolor,colbacklower=yellow,lower separated=true]     % Debug
-\begin{headingbox}[]
-   \UserName{} \\
-   Software Architect \BAspaceBullet Embedded developer \\
-   \BAspaceBullet Boot \BAspaceBullet Linux device driver \BAspaceBullet UFS  \\
-   Experience \UserExperience{} Years    \\
-   \faLinkedin{} \space \UserLinkedIn{} \BAspaceBullet \faPhone{} \UserMobile{} \BAspaceBullet \space \faEnvelope{} \space \UserEmailID{}
-%
-%
-\tcblower
-   \CurrentCompany{} \\
-   Staff Engineer  \\
-   {\Large{\localLocPin}}{} \UserLocation{}
-%
-%
-\end{headingbox}
-\\[0.25\baselineskip]
+\begin{staticcontents}{1}
+\begin{minipage}[b]{0.66\textwidth}        % Minipage align to bottom
+%\raggedright{
+   \centering{
 
+         \UserName{} \\
+         Software Architect \BAspaceBullet Embedded developer \\
+         \BAspaceBullet Boot \BAspaceBullet Linux device driver \BAspaceBullet UFS  \\
+         Experience \UserExperience{} Years    \\
+         \faLinkedin{} \space \UserLinkedIn{} \BAspaceBullet \faPhone{} \UserMobile{} \BAspaceBullet \space \faEnvelope{} \space \UserEmailID{}
+   } %% \centering
+\end{minipage}%
+\hfill
 %
-%\begin{masterbox}[./data/skillinfo.tex]{colback=blue!5!white,height fill,enhanced,show bounding box=blue}{draw=blue,fill=red!5!white}               % Debug
-\begin{masterbox}[./data/skillinfo.tex]{}{draw=none,fill=none}
+%   Begin Left side Minipage
+{
+   %\noindent\fbox{%
+   \begin{minipage}[b]{0.33\textwidth}        % Minipage align to bottom
+         \raggedleft{
+
+            \CurrentCompany{} \\
+               Staff Engineer  \\
+               {\Large{\localLocPin}}{} \UserLocation{}
+         }
+      \end{minipage}%
+   }
+
+\end{staticcontents}
+\begin{staticcontents*}{LeftCL}
+\input{./data/skillinfo.tex}
+\end{staticcontents*}
 \input{./data/workinfo.tex}
-\end{masterbox}
 
 \end{document}
