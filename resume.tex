@@ -1,0 +1,529 @@
+% ─────────────────────────────────────────────────────────────────
+%  Curriculum Vitae — \UserName{}
+%  Font     : Bitstream Charter (BT Roman)
+%  ATS      : Single-column, paracol skills, plain headings
+%  Icons    : fontawesome5
+%  Footer   : Last Modified date — light gray, bottom right
+% ─────────────────────────────────────────────────────────────────
+\documentclass[10pt, a4paper]{article}
+
+%% ── Packages ─────────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{charter}
+\usepackage{microtype}
+%\usepackage[margin=1.4cm, top=1.4cm, bottom=1.8cm]{geometry}
+\usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{paracol}
+\usepackage{fontawesome5}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+%% ── Colours ──────────────────────────────────────────────────────
+\definecolor{accentblue}{HTML}{2B6CB0}
+\definecolor{lightgray}{HTML}{555555}
+\definecolor{datecolor}{HTML}{CCCCCC}
+\definecolor{iconcolor}{HTML}{2D3748}
+\definecolor{ltgrey}{gray}{0.50}
+
+%%%
+%%%
+% Load Confidential data
+\IfFileExists{./data/UserPvtInfo1.tex}{\input{./data/UserPvtInfo1.tex}}{\input{./data/UserPubInfo.tex}}
+
+%% ── Hyperlinks ───────────────────────────────────────────────────
+\hypersetup{
+  colorlinks = true,
+  urlcolor   = accentblue,
+  linkcolor  = accentblue,
+  pdfauthor  = {\UserName{}},
+  pdftitle   = {\UserName{} - Embedded Systems CV},
+  pdfsubject = {Curriculum Vitae}
+}
+
+%% ── Section style ────────────────────────────────────────────────
+\titleformat{\section}
+  {\large\bfseries\color{accentblue}}
+  {}{0em}{}
+  [\vspace{-0.5em}\rule{\linewidth}{0.6pt}\vspace{-0.3em}]
+\titlespacing{\section}{0pt}{8pt}{4pt}
+
+\pagestyle{empty}
+
+%% ── List settings ────────────────────────────────────────────────
+\setlist[itemize]{leftmargin=1.5em, topsep=2pt, itemsep=1pt, parsep=0pt}
+
+%% ── CV Entry command ─────────────────────────────────────────────
+\newcommand{\cventry}[3]{%
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} --- \textit{#2} & \textcolor{lightgray}{\small #3}
+  \end{tabularx}
+  \vspace{2pt}
+}
+
+\newcommand{\clientinfo}[2]{%
+  \noindent\textcolor{lightgray}{\small\textit{#1:}}\enspace#2\par
+}
+
+\newcommand{\MainHeading}[1]{%
+    {\noindent \color{ltgrey}\normalsize{\textsc {#1}}}\vspace{2pt}}%%
+
+\newcommand{\MainSubHeading}[2]{%
+   {\noindent \large{\textsc{\textbf{#1} #2}}}\\ }
+
+%% ── Bullet Point ─────────────────────────────────────────────
+\newcommand{\bpoint}[1]{\mbox{{\textbullet{} #1 }}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+\newcommand{\BAspaceBullet}{\quad\textbar\quad}
+\usepackage{layouts}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ─────────────────────────────────────────────────────────────────
+\begin{document}
+%% ══════════════════════════════════════════════════════════════════
+%%  HEADER
+%% ══════════════════════════════════════════════════════════════════
+\begin{minipage}[b]{0.66\textwidth}        % Minipage align to bottom
+%\raggedright{
+   \centering{
+         \UserName{} \\
+         Embedded Architect \textbullet{} Linux Kernel \textbullet{} XBL \textbullet{} U-Boot \textbullet{} UEFI \textbullet{} UFS \newline %%
+         Ethernet \textbullet{} KPI optimizations \newline %%
+         Automotive ADAS/IVI \vspace{2pt}\newline %%
+         \small{\faPhone*{} \UserMobile{} \quad\textbar\quad \faEnvelope{} \space \UserEmailID{} \quad\textbar\quad \faLinkedin{} \space \UserLinkedIn{}} %%
+   } %% \centering
+\end{minipage}%
+\hfill
+%
+%   Begin Left side Minipage
+   %\noindent\fbox{%
+\begin{minipage}[b]{0.33\textwidth}        % Minipage align to bottom
+      \raggedleft{
+         \CurrentCompany{} \\%%
+            Staff Engineer  \\%%
+            Exp. \UserExperience{} Years\\%%
+            \UserLocation{}\\%%
+      }%%
+\end{minipage}%
+%\vspace{2pt}\rule{\linewidth}{1.2pt}\vspace{4pt}
+%%
+%% ══════════════════════════════════════════════════════════════════
+%%  PROFESSIONAL SUMMARY
+%% ══════════════════════════════════════════════════════════════════
+\vspace{1em}%%
+\newline%%
+\MainHeading{Professional Summary}\vspace{-5pt}%%
+\begin{itemize}[label={\textbullet}, leftmargin=*, topsep=0pt, partopsep=0pt, itemsep=0pt, parsep=0pt] %%
+   \item Nearly 13 years of experience in Embedded Software Development, contributing to the design, development, debugging, and support of software products across the complete development lifecycle.
+   \item Strong technical background in Linux kernel, bootloaders, schematic, storage technologies, embedded protocols, device drivers, and system-level software development.
+   \item Driving software architecture and design, technical discussions, scoping, ETAs and tracking execution.
+   \item Worked closely with customers, product management, program management, and cross-functional teams to define requirements, execution plan, resolve issues, and deliver solutions.
+   \item Recognized for hands-on problem solving, root cause analysis, performance optimization, and a collaborative approach to improving product quality and reliability.
+\end{itemize}
+%
+%
+%
+%
+%
+%% ══════════════════════════════════════════════════════════════════
+%%  TECHNICAL SKILLS
+%% ══════════════════════════════════════════════════════════════════
+\vspace{1em}%%
+\begin{minipage}[t]{0.33\textwidth}        % Minipage align to bottom
+%% =========== Point wise skills =============
+\raggedright{
+   \MainHeading{Core Competencies}\newline%%
+   {
+      \bpoint{Software Architect}
+      \bpoint{Linux kernel}
+      \bpoint{XBL}
+      \bpoint{U-Boot}
+      \bpoint{UEFI}
+      \bpoint{Trace32}
+      \bpoint{HW Schematic}
+      \bpoint{UFS}
+      \bpoint{I2C}
+      \bpoint{PIN Multiplexing}
+      \bpoint{SPI}
+      \bpoint{MDIO}
+      \bpoint{Board Bring up}
+      \bpoint{Ethernet}
+      \bpoint{Switch - MAC Layer 2 \& Layer 4}
+      \bpoint{Board Bring-UP Activities}
+      \bpoint{Boot Flow - PBL to HLOS}
+      \bpoint{System Development}
+      \bpoint{IPC}
+      \bpoint{Yocto}
+      \bpoint{git} \bpoint{perforce} \bpoint{svn} \bpoint{Jenkins} \bpoint{Trace32}
+      \bpoint{Project Management}
+      \bpoint{Team Lead}
+      \bpoint{Claude workflows}
+   }
+} %%\raggedright
+\newline %%
+
+%% ══════════════════════════════════════════════════════════════════
+%%  EDUCATION
+%% ══════════════════════════════════════════════════════════════════
+   \MainHeading{Education}\newline%%
+   \MainSubHeading{B.Tech}{in Electronics \& Communication Engg.}
+   {\textsc {\small \color{ltgrey}\UserCollege{} \hfill Apr 2013}}
+\newline %%
+
+   \MainHeading{Programming}\newline%%
+   \bpoint{Proficient in C \& Data Structures}
+   \bpoint{Bash}
+   \bpoint{Python}
+   \bpoint{C++}
+\newline %%
+
+
+   \MainHeading{Languages}\newline%%
+   \bpoint{Native \emph{Panjabi}}
+   \bpoint{Proficient in English}
+   \bpoint{Hindi}
+\end{minipage}%
+%
+\hfill
+%
+\begin{minipage}[t]{0.66\textwidth}        % Minipage align to bottom
+  \MainHeading{Technical Skills}%%
+   \begin{itemize}[label={-}, topsep=0pt, partopsep=0pt, itemsep=0pt, parsep=0pt]
+%
+% ============== Leadership =============== %
+      \item \noindent Implemented Agentic AI workflow with Claude, created workflows for storage.
+      \item \noindent Expertise in end-to-end development of software products from requirement analysis to system study,
+       designing, coding, testing, debugging, documentation and implementation.
+      \item \noindent Optimizing the existing design, software, Improving Boot KPIs i.e. boot/driver to add value to product.
+      \item \noindent Good Analytical skills to segregate complex issues for systematic resolution.
+      \item \noindent Supporting customers for blocker and escalated issues providing timely support and unblocking them.
+      \item \noindent Leading failure triage, root cause analysis, and system level debugging across platforms.
+      \item \noindent Driving project planning, task breakdown, estimation, prioritization, and execution tracking.
+      \item \noindent Complete understanding of the boot flow and involvement of different stages involved till final application.
+%
+% ============== Technical =============== %
+      \item \noindent Expertize in embedded protocols (UFS, I2C, SPI, MDIO, Ethernet L2) and Device driver development in Linux Kernel and Boot loader i.e. u-boot, XBL, UEFI.
+%      \item \noindent Working on Linux kernel and Zephyr OS.
+      \item \noindent Experience in MAC driver for ethernet at L2.
+      \item \noindent Knowledge of Network Pakcet flow and with TCP/IP layer.
+%      \item \noindent Planned the software architecture as per customer's requirement.
+      \item \noindent Done the Board Bring up, porting of u-boot, device-tree and linux.
+      \item \noindent Experience in debugging of interface like DDR, NAND, I2C, SPI and UART.
+      \item \noindent Experience in networking for L2, priority scheduling, Round Robin scheduling.
+      \item \noindent Experience in TCP/IP, UDP, layer 2, layer 4 and complete network packet flow.
+      \item \noindent Experience in Ethernet driver, socket buffers i.e. skb packets to prioritize UDP packets.
+      \item \noindent Write slave drivers for I2C and SPI for micro-processor, as Linux kernel doesn’t provide support for slave mode.
+      \item \noindent Write linux device driver to access DDR for firmware upgrade \& fail-safe mechanism.
+      \item \noindent Experience with interfaces like NAND, EMMC, Ethernet, USB, DDR, NOR, Sd-Card, Bluetooth.
+      \item \noindent Experience in debugging I2C, SPI, UART slave devices and at linux user space.
+      \item \noindent Customized boot-loader and Linux operating system for embedded platforms.
+      \item \noindent Experienced with i.MX 6 sabresd/sololite, Mini2440,
+         \href{http://www.radiumboards.com/TI\_TDA2x\_Based\_xCAM\_Platform.php}{\textbf{\underline{TI's TDA2x}}},
+         \href{http://www.nxp.com/products/reference-designs/qoriq-ls1021a-iot-gateway-reference-design:LS1021A-IoT}{\textbf{\underline{LS1021A-IOT}}} boards.
+      \item \noindent Experience with processors like TI's omap, Freescale's i.MX 6, Qualcomm's IPQ4029 \& IPQ4029.
+      \item \noindent Ported the Marvell 88E6352 chip in linux and u-boot based on Distributed Switch Architecture for Ethernet.
+      %\item \noindent Experience with SDK: Yocto, Openwrt, VISION\_SDK.
+      %\item \noindent Having a good analysis and debugging skills.
+   \end{itemize}
+\end{minipage}%
+%
+%
+%
+%
+%
+%% ══════════════════════════════════════════════════════════════════
+%%  PROFESSIONAL EXPERIENCE
+%% ══════════════════════════════════════════════════════════════════
+\newline%%
+\vspace{0pt}%%
+\MainHeading{Professional Experience}\newline%%
+%% ── Job 5 ────────────────────────────────────────────────────────
+\cventry{Staff Engineer}{\CompanyV{}}{\CompanyVExp{}}
+%\clientinfo{Location}{\CompanyVLoc{}}
+\vspace{-1.5em}%%
+\begin{itemize}[label={-}, leftmargin=*, topsep=0pt, partopsep=0pt, itemsep=0pt, parsep=0pt] %%
+   \item Overall Storage technology Lead for all the AUTO SOC’s primarily for UFS \& its dependency across subsystem like PBL, PMIC, IMEM, Hypervisor, TZ, DDR and boot.
+   \item Involved in end-to-end design from requirement analysis to system study, limitations, active discussions across the teams.
+   \item Handling Feature requests, development, triaging blocker and customer issues.
+%Expertise in end-to-end development of software products from requirement analysis to system study, designing, coding, testing, debugging, documentation and implementation.
+   \item Planning the project, task breakdown, discussion across the teams, dependencies, prioritization and execution tracking
+   \item Effectively addressing stakeholders across management, CE, Customers and internal teams for the timelines.
+\end{itemize}
+
+\begin{itemize}
+  \item \textbf{WakeUP sequence broken for Suspend to Ram feature}
+		Resolved crash in UFS linux kernel while waking up the system during Suspend to RAM
+		feature. Analyzed the state machine and different subsystems i.e. Linux, GearVM
+		involved in this use-case to figure out the crash due to power change event and system
+		remains in hibernation state. Changes mainlined in gearvm for scalability and upstream changes.
+
+  \item \textbf{90msec improvement by skipping UFS init in kernel}
+		Designed and implemented feature to skip UFS init in linux kernel to leverage the previous
+		state machine as configured through XBL, UEFI. At XBL, UFS is initialized to HS-G4 and maintined
+		till linux kernel. Make sure the UFS is not put to SSU or in reset state. Handled UEFI Exit
+		Boot Services to avoid SSU trigger for UFS.
+
+  \item \textbf{Boot KPI Optimisation --- 200+ msec Saved:}
+		Optimized existing boot flow that resulted in 200+ msec improvement
+		• UFS partial Init • Remove retry of UFS2.x
+		• Remove UFS read in PWM Gear for GPT • UFS read size increased to 256MB data
+		• PMIC init parallel to UFS
+
+  \item \textbf{Scatter Gather --- 70\% KPI Improvement:}
+        Designed and implemented \textbf{Scatter Gather} for UFS read operations,
+        enabling a single read command to load boot images to multiple discontiguous
+        DDR addresses, replacing multiple sequential reads and achieving a
+        \textbf{70\% improvement} in boot KPI.
+
+  \item \textbf{2nd UFS initialization:}
+        Initialize the 2nd UFS in UEFI, device programmer and linux kernel. Design take care of
+		KPI impact, Hyervisor passthrouh access, customer scenarios as 2nd UFS is not PORd for all customers. Analyze the
+		pre-requisities like PON sequence, Clocks and voltages.
+
+  \item \textbf{UFS PHY Skip Feature:}
+        Designed the UFS subsystem state to make PHY configurations redundant at XBL to save \textbf{100 msec}.
+		PBL will configure the PHY registers with HS Gear settings and 2 lanes but still operate over
+		1 Lane that makes PHY configurations redundant at XBL which requires only Gear Change and
+		Data lanes to 2. Proof of Concept done at pre-sil stage and identified the critical crash at XBL as 
+		\texttt{PA\_AvailLanes} was not set correctly in PBL.
+
+
+  \item \textbf{Mission \& Non-Mission Mode (Licensed Feature):}
+        Designed and delivered a \textbf{licensed JEDEC-spec feature} for subscribed
+        AUTO OEMs enabling comprehensive UFS device validation in UEFI, providing
+		access to JEDEC defined descriptor, attributes and flags. It helps to analyze
+		state machine in case of crash observed for the on field devices.
+
+  \item \textbf{UFS Cache Bug --- 50K Iteration Failure:}
+        Customer Issue - Diagnosed and fixed a critical intermittent failure (per 50K iterations)
+        across multiple UFS commands (bootable LUN, geometry, config, unit
+        descriptors) caused by \textbf{stale cache responses} on the Host
+        Controller; flushing cache memory resolved all failure scenarios. Analyze the
+		pattern across failures due to mismatch in the tag of sent request 
+		and received response. Provided patch to customer quickly.
+
+  \item \textbf{PMIC controller to set VCCQ to 1.224 --- Critical Customer issue:}
+		Customer devices requires VCCQ to 1.224V than 1.2V from reference HW and only when UFS3.x
+		card than UFS2.x. Impact analysis and design shared with customer on XBL and Flashing sequence.
+		In XBL, as UFS is already initialized the UFS so Spec Version can be read to init the PMIC first and then full PHY init
+		happens. In Device Programmer, It requires re-int
+
+  \item \textbf{First UFS Read Failure After PMIC Init:}
+        Investigated a critical bug where the first UFS read command failed
+        after PMIC initialisation with PA/DL layer errors. Traced root cause to
+        \textbf{differing PSI voltage values} between PON sequence and
+        post-PMIC-init state causing voltage jitter; routed confirmed issue to
+        PMIC team.
+
+  \item \textbf{Automotive SoC Bring-Up --- SA8255 (LeMans):}
+        Led the UFS bring-up for \textbf{SA8255 (Qualcomm's first AUTO SoC)},
+        meticulously planning all XBL, UEFI, and flashing tool use-cases,
+        dependencies, and limitations. Resolved critical clock issues while
+		configuring PHY registers, provided work around for different issues
+		(Scale PBL settings with 1 Lane, enable all clocks)to unblock further
+		development and parallely working with relevant teams for proper fix.
+		Also successfully brought up UFS on \textbf{SA8775, SA8620, and SA8797}.
+
+  \item \textbf{BU - SA8797, NOP failure:}
+        Resolved the SBFE i.e. System Bus Fatal Error reported at UFS Host upon NOP command
+		is being ready to sent. UFS Host controller facing issues while access the memory
+		where command is being prepared. Debugged and provided workaround to allocated memory
+		on OCIMEM rather than usual IMEM. Further, issue is resolved as memory is not 4KB aligned.
+
+  \item \textbf{GearVM: Architect GearVM Software responsibilities}
+		Architected and implemented the UFS subsystem in GearVM to manage performance
+		and power-domain requests from QNX, GVM, and Linux clients. Designed a granular
+		power-management framework enabling OS to independently control	UFS states,
+		including Power On, Power Off, Sleep, and Suspend-to-RAM. This architecture
+		abstracts Qualcomm-specific and hardware-dependent functionality within 
+		GearVM, improving Linux upstream compatibility and reducing platform-specific dependencies.
+		Defined and communicated a phased implementation roadmap and progress 
+		updates to stakeholders across the program lifecycle.
+
+  \item \textbf{Production Line issue GearVM: Architect GearVM Software responsibilities}
+		Customer UFS devices are pre-provisioned at factory with wrong information that enables
+		only LUN 2,3 and 7 that cause failure in flashing which furhter blocks the production line.
+		Shared analysis with customer that rules out Qualcomm.
+
+  \item \textbf{Cross-Team Leadership:}
+        Leading design and development for UFS across interdependent teams
+        (PMIC, Clocks, PBL, XBL, Boot); supporting CE teams globally across
+        multiple time zones for storage-related customer escalations.
+
+  \item \textbf{Team Leadership:}
+        Leading a team of 4 members that covers task planning, mentoring, limitations,
+		helping them in debug, navigating there tasks and ETAs.
+
+\end{itemize}
+
+\vspace{4pt}
+
+%% ── Job 4 ────────────────────────────────────────────────────────
+\cventry{Technical Leader}{\CompanyIV{}}{\CompanyIVExp{}}
+%\clientinfo{Location}{\CompanyIVLoc{}}
+\clientinfo{Domain}{AUTOSAR SWS Specification, RADAR Validation, Microcontroller Bring-Up}
+
+\begin{itemize}
+  \item \textbf{AUTOSAR SWS Specification:}
+        Defined \textbf{AUTOSAR SWS specifications} for Port, SPI, I2C, and
+        peripheral interfaces for a new microcontroller, ensuring critical
+        timing requirements, safety margins, and implementation guidelines.
+
+  \item \textbf{CAN 50 msec POR Requirement:}
+        Analysed and implemented the requirement to initiate the
+        \textbf{first CAN message within 50 msec} after Power-On Reset,
+        meeting stringent automotive real-time constraints.
+
+  \item \textbf{RADAR Chipset Integration (76--81 GHz):}
+        Integrated a RADAR chipset over I2C bus with the \textbf{NXP S32R} series
+        microcontroller; implemented full test-case coverage across the complete
+        76--81 GHz frequency band with configurable sweep windows.
+
+  \item \textbf{RADAR Matlab Plot Analysis:}
+        Analysed generated Matlab plots to validate RADAR test coverage and
+        confirm compliance with automotive safety frequency requirements.
+\end{itemize}
+
+\vspace{4pt}
+
+%% ── Job 3 ────────────────────────────────────────────────────────
+\cventry{Technical Leader}{\CompanyIII{}}{\CompanyIIIExp{}}
+%\clientinfo{Location}{\CompanyIIILoc{}}
+\clientinfo{Domain}{5G mmWave Wireless, OTA Firmware Upgrade, Ethernet/PHY Integration}
+
+\begin{itemize}
+  \item \textbf{Fail-Safe OTA Firmware Upgrade:}
+        Implemented a \textbf{fail-safe recovery mechanism} for OTA firmware
+        updates targeting boot binaries; ensured system integrity is maintained
+        even upon partial or failed OTA operations.
+
+  \item \textbf{Atheros PHY Integration:}
+        Ported and integrated \textbf{Atheros PHY} with Marvell SoC using MDIO
+        protocol in Linux kernel; provided full software support to meet
+        passing criteria.
+
+  \item \textbf{DFS RADAR Detection --- Wireless Client (First-Ever Design):}
+        Designed and implemented a wireless client use-case to abort 5\,GHz
+        communication and raise CAC to station upon RADAR detection on the
+        current DFS channel --- the \textbf{first-ever design} of this type for
+        a wireless client, required for Airport safety approvals.
+\end{itemize}
+
+\vspace{4pt}
+
+%% ── Job 2 ────────────────────────────────────────────────────────
+\cventry{Senior Engineer}{\CompanyII{}}{\CompanyIIExp{}}
+%\clientinfo{Location}{\CompnayIILoc{}}
+\clientinfo{Domain}{Boot Automation, Jenkins, Wi-Fi Firmware Loading}
+
+\begin{itemize}
+  \item \textbf{Automated Boot-Terminal Firmware Loader:}
+        u-boot: Implemented a boot terminal command to \textbf{auto-initialise localhost
+        IP, fetch Wi-Fi firmware binary over TFTP}, and flash it to the required
+        memory address --- fully automating firmware loading at boot time.
+
+  \item \textbf{Jenkins Framework Scaling:}
+        Studied and extended the existing Jenkins CI framework to support
+        \textbf{new hardware targets} for nightly regression builds and tests.
+\end{itemize}
+
+\vspace{4pt}
+
+%% ── Job 5 ────────────────────────────────────────────────────────
+\cventry{Senior Engineer}{\CompanyI{}}{\CompanyIExp{}}
+%\clientinfo{Location}{\CompanyILoc{}}
+\clientinfo{Domain}{Embedded Systems, Board Bring-Up, Linux Kernel, Networking}
+
+\begin{itemize}
+  \item \textbf{Multi-Target Board Bring-Up:}
+        Led board bring-up for \textbf{TI DM388, Qualcomm IPQ4029, TI TDA2xx,}
+        and \textbf{Freescale i.MX6} series; performed U-Boot porting,
+        device-tree customisation, and Linux kernel optimisations.
+
+  \item \textbf{Marvell 88E6352 Switch Porting:}
+        Ported the \textbf{Marvell 88E6352} Gigabit Ethernet switch chip in both
+        Linux and U-Boot based on the \textbf{Distributed Switch Architecture (DSA)},
+        enabling multi-port Ethernet switching for IoT router platforms.
+
+  \item \textbf{I2C / SPI Slave Drivers:}
+        Written Linux slave drivers for I2C and SPI on microprocessors where
+        the Linux kernel does not natively provide slave-mode support.
+
+  \item \textbf{DDR Access Driver --- OTA \& Fail-Safe:}
+        Developed a Linux device driver for direct DDR access to support
+        firmware upgrade and fail-safe recovery mechanisms.
+
+  \item \textbf{Ethernet MAC Driver (L2):}
+        Developed and debugged Ethernet MAC driver at Layer 2, including
+        socket buffer (SKB) management for UDP packet prioritisation,
+        L2 priority scheduling, and Round Robin scheduling.
+
+  \item \textbf{System Applications:}
+        Written applications for \textbf{hostapd, udhcpc, wpa\_supplicant,
+        Node.js, and BOA server} to meet end-customer product use-cases;
+        implemented IPC, multi-thread, and socket programming solutions.
+
+  \item \textbf{Full-Cycle Ownership:}
+        Owned complete embedded system lifecycle: customer requirement
+        analysis, feature development, bug resolution, and end-to-end
+        validation across bring-up, U-Boot, Linux kernel, and user-space.
+\end{itemize}
+
+%% ══════════════════════════════════════════════════════════════════
+%%  KEY ACHIEVEMENTS
+%% ══════════════════════════════════════════════════════════════════
+\MainHeading{\color{accentblue}Key Achievements}\vspace{-1.5em}\newline %%
+\begin{itemize}
+  \item \textbf{70\% Boot KPI Improvement via Scatter Gather:}
+        Designed and delivered Scatter Gather for UFS read, replacing multiple
+        sequential reads with a single operation and achieving a
+        \textbf{70\% improvement} in boot KPI on Qualcomm AUTO SoCs.
+
+  \item \textbf{200+ msec Cumulative Boot Optimisation at Qualcomm:}
+        Drove a portfolio of UFS boot optimisation initiatives (PHY Skip, Probe
+        Optimisation, PMIC Parallelisation, PWM Gear removal) delivering
+        \textbf{200+ msec total boot KPI reduction} for Automotive SoCs.
+
+  \item \textbf{SA8255 (LeMans) --- First-Ever AUTO SoC UFS Bring-Up:}
+        Successfully led UFS bring-up for Qualcomm's first Automotive SoC
+        (SA8255/LeMans) and subsequently for SA8775, SA8620, and SA8797.
+
+  \item \textbf{First-Ever DFS RADAR Detection Design for Wireless Client (PHAZR):}
+        Designed a novel wireless client use-case for DFS RADAR detection
+        in the 5\,GHz band, the first of its kind for a wireless client platform,
+        required for airport safety compliance.
+
+  \item \textbf{Licensed Mission Mode Feature for AUTO OEMs:}
+        Architected and delivered a JEDEC-spec licensed UFS validation feature
+        for subscribed Automotive OEMs enabling comprehensive UEFI-level
+        device health testing.
+\end{itemize}
+
+%% ── ATS keyword block (white text — invisible to human reader) ───
+\begin{center}
+\textcolor{white}{\tiny
+Linux Kernel, Embedded Linux, Device Driver, U-Boot, UEFI, Bootloader,
+UFS, eMMC, NAND, NOR, Storage, JEDEC, JESD220, PHY, HCI, UTRD, UPIU,
+Scatter Gather, Write Booster, Provisioning, Automotive, ADAS, SoC,
+SA8255, SA8775, SA8620, SA8797, Qualcomm, Staff Engineer, Software Architect,
+AUTOSAR, SWS, CAN, RADAR, 76GHz, 81GHz, DFS, 5GHz, mmWave,
+Ethernet, MAC, TCP/IP, UDP, L2, Networking, DSA, Marvell, Atheros, MDIO,
+I2C, SPI, UART, DDR, USB, Bluetooth, SD-Card, IPC, Multi-Thread, Socket,
+Board Bring-Up, Porting, Device Tree, Zephyr, RTOS, Jenkins, TFTP,
+Freescale, i.MX6, TI, TDA2x, NXP, S32R, IPQ4029, VVDN, PHAZR, Mirafra,
+Randstad, Antal, Marlabs, OTA, Fail-Safe, Boot KPI, Performance Optimisation,
+Embedded Systems, Firmware, Cache, PMIC, Clocks, PBL, XBL, GearVM
+}
+\end{center}
+
+\end{document}
