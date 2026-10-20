@@ -124,6 +124,7 @@
 \newline%%
 \MainHeading{Professional Summary}\vspace{-5pt}%%
 \begin{itemize}[label={\textbullet}, leftmargin=*, topsep=0pt, partopsep=0pt, itemsep=0pt, parsep=0pt] %%
+   \item Strong experience in UFS. Implemented 20+ features and Bring-Up of UFS in \CompanyV{}'s first ever Automotive Chipset.
    \item Nearly 13 years of experience in Embedded Software Development, contributing to the design, development, debugging, and support of software products across the complete development lifecycle.
    \item Strong technical background in Linux kernel, bootloaders, schematic, storage technologies, embedded protocols, device drivers, and system-level software development.
    \item Driving software architecture and design, technical discussions, scoping, ETAs and tracking execution.
@@ -168,6 +169,7 @@
       \bpoint{Project Management}
       \bpoint{Team Lead}
       \bpoint{Claude workflows}
+      \bpoint{Hypervisor}
    }
 } %%\raggedright
 \newline %%
@@ -204,28 +206,29 @@
       \item \noindent Implemented Agentic AI workflow with Claude, created workflows for storage.
       \item \noindent Expertise in end-to-end development of software products from requirement analysis to system study,
        designing, coding, testing, debugging, documentation and implementation.
+      \item \noindent Experienced with Pre-Sil and RUMI development and validations.
       \item \noindent Optimizing the existing design, software, Improving Boot KPIs i.e. boot/driver to add value to product.
-      \item \noindent Good Analytical skills to segregate complex issues for systematic resolution.
-      \item \noindent Supporting customers for blocker and escalated issues providing timely support and unblocking them.
-      \item \noindent Leading failure triage, root cause analysis, and system level debugging across platforms.
-      \item \noindent Driving project planning, task breakdown, estimation, prioritization, and execution tracking.
+%      \item \noindent Good Analytical skills to segregate complex issues for systematic resolution.
+%      \item \noindent Supporting customers for blocker and escalated issues providing timely support and unblocking them.
+%      \item \noindent Leading failure triage, root cause analysis, and system level debugging across platforms.
+%      \item \noindent Driving project planning, task breakdown, estimation, prioritization, and execution tracking.
       \item \noindent Complete understanding of the boot flow and involvement of different stages involved till final application.
 %
 % ============== Technical =============== %
       \item \noindent Expertize in embedded protocols (UFS, I2C, SPI, MDIO, Ethernet L2) and Device driver development in Linux Kernel and Boot loader i.e. u-boot, XBL, UEFI.
 %      \item \noindent Working on Linux kernel and Zephyr OS.
+      \item \noindent Knowledge of Hypervisor working.
       \item \noindent Experience in MAC driver for ethernet at L2.
       \item \noindent Knowledge of Network Pakcet flow and with TCP/IP layer.
+      \item \noindent Experience in Ethernet driver, socket buffers i.e. skb packets to prioritize UDP packets.
 %      \item \noindent Planned the software architecture as per customer's requirement.
       \item \noindent Done the Board Bring up, porting of u-boot, device-tree and linux.
-      \item \noindent Experience in debugging of interface like DDR, NAND, I2C, SPI and UART.
-      \item \noindent Experience in networking for L2, priority scheduling, Round Robin scheduling.
-      \item \noindent Experience in TCP/IP, UDP, layer 2, layer 4 and complete network packet flow.
-      \item \noindent Experience in Ethernet driver, socket buffers i.e. skb packets to prioritize UDP packets.
+%      \item \noindent Experience in debugging of interface like DDR, NAND, I2C, SPI and UART.
+%      \item \noindent Experience in networking for L2, priority scheduling, Round Robin scheduling.
+%      \item \noindent Experience in TCP/IP, UDP, layer 2, layer 4 and complete network packet flow.
       \item \noindent Write slave drivers for I2C and SPI for micro-processor, as Linux kernel doesn’t provide support for slave mode.
       \item \noindent Write linux device driver to access DDR for firmware upgrade \& fail-safe mechanism.
-      \item \noindent Experience with interfaces like NAND, EMMC, Ethernet, USB, DDR, NOR, Sd-Card, Bluetooth.
-      \item \noindent Experience in debugging I2C, SPI, UART slave devices and at linux user space.
+%      \item \noindent Experience with interfaces like NAND, EMMC, Ethernet, USB, DDR, NOR, Sd-Card, Bluetooth.
       \item \noindent Customized boot-loader and Linux operating system for embedded platforms.
       \item \noindent Experienced with i.MX 6 sabresd/sololite, Mini2440,
          \href{http://www.radiumboards.com/TI\_TDA2x\_Based\_xCAM\_Platform.php}{\textbf{\underline{TI's TDA2x}}},
@@ -261,17 +264,38 @@
 \end{itemize}
 
 \begin{itemize}
+  \item \textbf{Enabling 2nd UFS in GVM and PVM}
+      %
+      % Description: Enabling 2nd UFS in GVM with SCMI driver enabled
+      %              Hypervisor to enable interrupts upon MCQ feature completion
+      %
+      Enabled the 2nd UFS in GVM for SA8797 chipset, requires changes in DTS, MSI-X Interrupts for MCQ features.
+      Collaborated with the Hypervisor team to update the aperture policy, enabling interrupt generation when the device raises MSI interrupts.
+
   \item \textbf{WakeUP sequence broken for Suspend to Ram feature}
+      %
+      % Description: STR(Suspend to Ram feature) - in wakeup sequence, while booting system crashing in
+      %              UFS driver.
+      %              Prior to Sleep, Whole statemachine is saved to DDR(RAM) and boot address is saved
+      %              to some address. When CPU wakes-up, it loads PC with boot address for waking up
+      %              Linux UFS driver works well for HS-G1 but when changed to HS-G5 it requires Hibernation flag
+      %              to be cleared.
+      %
 		Resolved crash in UFS linux kernel while waking up the system during Suspend to RAM
-		feature. Analyzed the state machine and different subsystems i.e. Linux, GearVM
-		involved in this use-case to figure out the crash due to power change event and system
-		remains in hibernation state. Changes mainlined in gearvm for scalability and upstream changes.
+		feature. Analyzed the state machine and different subsystems i.e. Linux, GearVM for it.
+      Crash is due to hibernation state after HS-G5.
 
   \item \textbf{90msec improvement by skipping UFS init in kernel}
-		Designed and implemented feature to skip UFS init in linux kernel to leverage the previous
-		state machine as configured through XBL, UEFI. At XBL, UFS is initialized to HS-G4 and maintined
-		till linux kernel. Make sure the UFS is not put to SSU or in reset state. Handled UEFI Exit
-		Boot Services to avoid SSU trigger for UFS.
+      %
+      % Description: Implemented FR to skip UFS Phy initialization in Linux kernel to save 90msec time
+      %              for Link Startup. Changes done in XBL, UEFI(Skipping SSU) in GearVM(Zephyr based OS)
+      %              XBL - Leverage PBL setting + Skip PHY Settings + Change HS-G5
+      %              UEFI - Exit boot services shall not call SSU2 command prior to loading kernel
+      %              GearVM - Granular apis to have reset, clock and PHY operations
+      %
+      Designed and implemented a feature to preserve the UFS initialization state across XBL,
+      UEFI, GearVM, and Linux, enabling Linux to skip UFS re-initialization while preventing
+      UFS reset or SSU transitions. Also handled UEFI Exit Boot Services to maintain the UFS HS-G4 state until Linux boot.
 
   \item \textbf{Boot KPI Optimisation --- 200+ msec Saved:}
 		Optimized existing boot flow that resulted in 200+ msec improvement
