@@ -18,9 +18,16 @@ pin: output data/pin.tex
 	cd output && dvipdf pin.dvi
 	cd output && dvips pin.dvi
 
+cv:
+	pdflatex -output-directory=./output resume.tex
+	pdflatex -output-directory=./output resume.tex
+	pdflatex -output-directory=./output resume.tex
+
 .PHONY: clean
 clean:
 	rm output/*.out output/*.aux  output/*.dvi  output/*.log
+	rm *.aux  *.log  *.out
+
 
 # To remove pdf metadata use the following programs
 # https://www.pdflabs.com/docs/pdftk-cli-examples/
