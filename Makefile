@@ -19,9 +19,9 @@ pin: output data/pin.tex
 	cd output && dvips pin.dvi
 
 cv:
-	pdflatex resume.tex
-	pdflatex resume.tex
-	pdflatex resume.tex
+	pdflatex -output-directory=./output resume.tex
+	pdflatex -output-directory=./output resume.tex
+	pdflatex -output-directory=./output resume.tex
 
 .PHONY: clean
 clean:
