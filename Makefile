@@ -18,7 +18,7 @@ pin: output data/pin.tex
 	cd output && dvipdf pin.dvi
 	cd output && dvips pin.dvi
 
-cv:
+cv: output
 	pdflatex -output-directory=./output resume.tex
 	pdflatex -output-directory=./output resume.tex
 	pdflatex -output-directory=./output resume.tex
